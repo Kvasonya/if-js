@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Kvasonya/if-js#readme",
   "devDependencies": {
+    "eslint": "^8.29.0",
     "prettier": "2.8.1"
   }
 }
