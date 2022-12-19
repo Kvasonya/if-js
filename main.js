@@ -5,7 +5,7 @@ let user = 'John Doe';
 
 console.log(user);
 
-let student = 'Anna Kvasova';
+const student = 'Anna Kvasova';
 
 console.log(student);
 
