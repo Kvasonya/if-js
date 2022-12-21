@@ -1,6 +1,4 @@
-const line = '-----';
-
-//--------ex 1---------
+//--------lesson-2_task-1---------
 let user = 'John Doe';
 
 console.log(user);
@@ -14,9 +12,7 @@ user = student;
 //Anna Kvasova
 console.log(user);
 
-console.log(line);
-
-//--------ex 2---------
+//--------lesson-2_task-2---------
 let test = 1;
 
 test += 1;
@@ -39,9 +35,7 @@ test = true;
 //true
 console.log(test);
 
-console.log(line);
-
-//--------ex 3---------
+//--------lesson-2_task-3---------
 const arrayOne = [2, 3, 5, 8];
 let result = 1;
 
@@ -51,8 +45,6 @@ for (let i = 0; i < arrayOne.length; i++) {
 
 console.log(result);
 
-console.log(line);
-
 const arrayTwo = [2, 5, 8, 15, 0, 6, 20, 3];
 
 for (let i = 0; i < arrayTwo.length; i++) {
@@ -60,8 +52,6 @@ for (let i = 0; i < arrayTwo.length; i++) {
     console.log(arrayTwo[i]);
   }
 }
-
-console.log(line);
 
 for (let i = 0; i < arrayTwo.length; i++) {
   if (arrayTwo[i] !== 0 && arrayTwo[i] % 2 === 0) {
