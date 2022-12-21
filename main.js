@@ -61,11 +61,9 @@ for (let i = 0; i < arrayTwo.length; i += 1) {
 
 //--------lesson-3_task-1---------
 const palindrome = function (string) {
-  if (typeof string === 'undefined')
-    return false;
+  if (typeof string === 'undefined') return false;
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] !== string[string.length - 1 - i])
-      return false;
+    if (string[i] !== string[string.length - 1 - i]) return false;
   }
   return true;
 };
@@ -79,11 +77,10 @@ console.log(palindrome(345800)); //------как сделать, чтобы ср�
 console.log(palindrome('345800')); //------false
 console.log(palindrome('345543')); //------true
 
-let textPalindrome = 'довод'
+const textPalindrome = 'довод';
 
-console.log(palindrome(textPalindrome)) //------true
-console.log(palindrome(textPalindrome + 'ы')) //------false
-
+console.log(palindrome(textPalindrome)); //------true
+console.log(palindrome(textPalindrome + 'ы')); //------false
 
 // на примере 'шалаш' (length = 5; но! ш = 0, а = 1, л = 2, а = 3, ш = 4, т.е. =4):
 // for (let i = 0 (i = ш); i < string.length (порядковый номер меньше длины слова); i += 1 (переходим к след.букве) {
@@ -92,8 +89,43 @@ console.log(palindrome(textPalindrome + 'ы')) //------false
 // string[i=1] = а     string[string.length - 1 - i] = а (5-1-1) порядковый номер = 3
 // etc.
 
-
 //--------lesson-3_task-2---------
+const min = function (a, b) {
+  if (a < b) {
+    return a
+  }
+  return b
+}
+
+console.log(min(5,10))
+console.log(min(10,3))
+console.log(min(10,10))
+
+const max = function (a, b) {
+  if (a > b) {
+    return a
+  }
+  return b
+}
+
+console.log(max(5,10))
+console.log(max(10,3))
+console.log(max(10,10))
+
+const minTernary = function (a, b) {
+  return + (a < b ? a : b)
+}
+
+console.log(minTernary(5,10))
+console.log(minTernary(10,3))
+console.log(minTernary(10,10))
+
+const maxTernary = function (a, b) {
+  return + (a > b ? a : b)
+}
+
+console.log(maxTernary(5,10))
+console.log(maxTernary(10,3))
+console.log(maxTernary(10,10))
 
 //--------lesson-3_task-3---------
-
