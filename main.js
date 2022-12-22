@@ -61,19 +61,32 @@ for (let i = 0; i < arrayTwo.length; i += 1) {
 
 //--------lesson-3_task-1---------
 const palindrome = function (string) {
-  if (typeof string === 'undefined') return false;
-  for (let i = 0; i < string.length; i += 1) {
-    if (string[i] !== string[string.length - 1 - i]) return false;
+  if (typeof string === 'undefined') {
+    return 'Нет данных для проверки';
+  } else {
+    string = string
+      .toString()
+      .toLowerCase()
+      .split(' ')
+      .join('')
+      .replaceAll(',' && '–', '');
+    for (let i = 0; i < string.length; i += 1) {
+      if (string[i] !== string[string.length - 1 - i]) {
+        return false;
+      }
+    }
   }
   return true;
 };
+
 console.log(palindrome('шалаш')); //------true
 console.log(palindrome('шалаши')); //-----false
-console.log(palindrome('Шалаш')); //------why false?
-console.log(palindrome('ШалаШ')); //------как сделать, чтобы буквы сравнивались вне зависимости от регистра?
-console.log(palindrome('А роза упала на лапу Азора')); //------как сделать сравнение выражения (не учитывать пробелы)?
-console.log(palindrome()); //------false (undefined)
-console.log(palindrome(345800)); //------как сделать, чтобы сравнивались числа или в этом случае такое не предполагается (сравниваться могут только строки)?
+console.log(palindrome('Шалаш ШалаШ')); //------true; use .toLowerCase() or .toUpperCase()
+console.log(palindrome('А роза упала на лапу Азора')); //------true; use .split (splits the string into an array at the separator) and .join (concatenates the elements of an array into a string and returns a string + separates elements)
+console.log(palindrome('Миру – мир, Риму – Рим')); //------true; use .replaceAll (punctuation marks) ???
+console.log(palindrome()); //------"no data" || "нет данных" (undefined)
+console.log(palindrome(345800)); //------false; use .toString()
+console.log(palindrome(345543)); //-----true
 console.log(palindrome('345800')); //------false
 console.log(palindrome('345543')); //------true
 
