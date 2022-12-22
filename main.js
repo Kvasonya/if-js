@@ -112,7 +112,6 @@ const max = function (a, b) {
 
 console.log(max(5, 10));
 console.log(max(10, 3));
-
 console.log(max(10, 10));
 
 const minTernary = function (a, b) {
