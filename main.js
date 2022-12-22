@@ -148,7 +148,9 @@ const arrayThree = [10, 22, 42, 70, 100, 11, 40, 67, 8, 99];
 
 const renameZero = function (arr) {
   for (let i = 0; i < arr.length; i += 1) {
-    arr[i] = arr[i].toString().replaceAll('0', 'zero');
+    if (arr[i] % 10 === 0) {
+      arr[i] = arr[i].toString().replaceAll('0', 'zero');
+    }
   }
   return arr;
 };
