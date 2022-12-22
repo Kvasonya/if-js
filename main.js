@@ -92,40 +92,60 @@ console.log(palindrome(textPalindrome + 'ы')); //------false
 //--------lesson-3_task-2---------
 const min = function (a, b) {
   if (a < b) {
-    return a
+    return a;
   }
-  return b
-}
+  return b;
+};
 
-console.log(min(5,10))
-console.log(min(10,3))
-console.log(min(10,10))
+console.log(min(5, 10));
+console.log(min(10, 3));
+console.log(min(10, 10));
 
 const max = function (a, b) {
   if (a > b) {
-    return a
+    return a;
   }
-  return b
-}
+  return b;
+};
 
-console.log(max(5,10))
-console.log(max(10,3))
-console.log(max(10,10))
+console.log(max(5, 10));
+console.log(max(10, 3));
+console.log(max(10, 10));
 
 const minTernary = function (a, b) {
-  return + (a < b ? a : b)
-}
+  return +(a < b ? a : b);
+};
 
-console.log(minTernary(5,10))
-console.log(minTernary(10,3))
-console.log(minTernary(10,10))
+console.log(minTernary(5, 10));
+console.log(minTernary(10, 3));
+console.log(minTernary(10, 10));
 
 const maxTernary = function (a, b) {
-  return + (a > b ? a : b)
-}
+  return +(a > b ? a : b);
+};
 
-console.log(maxTernary(5,10))
-console.log(maxTernary(10,3))
-console.log(maxTernary(10,10))
+console.log(maxTernary(5, 10));
+console.log(maxTernary(10, 3));
+console.log(maxTernary(10, 10));
 
 //--------lesson-3_task-3---------
+const arrayThree = [10, 22, 42, 70, 100, 11, 4, 67, 8, 99];
+
+
+const zero = function (arr) {
+  const zero = 'zero'
+  for (let i = 0; i <= arr.length; i += 1) {
+    if (arr[i] % 10 === 0 && arr[i] % 100 !== 0)
+      arr[i] = arr[i] / 10 + zero;
+    else if (arr[i] % 100 === 0)
+      arr[i] = arr[i] / 100 + zero + zero;
+  }
+  return arr;
+}
+console.log(arrayThree)
+console.log(zero(arrayThree))
+
+const arrayTest = [-10, 2, 220, 4, 450, 6, -100];
+console.log(arrayTest)
+console.log(zero(arrayTest))
+
