@@ -62,7 +62,7 @@ for (let i = 0; i < arrayTwo.length; i += 1) {
 //--------lesson-3_task-1---------
 const palindrome = function (string) {
   if (typeof string === 'undefined') {
-    return 'Нет данных для проверки';
+    return 'No data';
   } else {
     string = string
       .toString()
@@ -144,20 +144,18 @@ console.log(maxTernary(10, 3));
 console.log(maxTernary(10, 10));
 
 //--------lesson-3_task-3---------
-const arrayThree = [10, 22, 42, 70, 100, 11, 4, 67, 8, 99];
+const arrayThree = [10, 22, 42, 70, 100, 11, 40, 67, 8, 99];
 
-const zero = function (arr) {
-  const zero = 'zero';
-  for (let i = 0; i <= arr.length; i += 1) {
-    if (arr[i] % 10 === 0 && arr[i] % 100 !== 0) arr[i] = arr[i] / 10 + zero;
-    else if (arr[i] % 100 === 0) arr[i] = arr[i] / 100 + zero + zero;
+const renameZero = function (arr) {
+  for (let i = 0; i < arr.length; i += 1) {
+    arr[i] = arr[i].toString().replaceAll('0', 'zero');
   }
   return arr;
 };
 
 console.log(arrayThree);
-console.log(zero(arrayThree));
+console.log(renameZero(arrayThree));
 
-const arrayTest = [-10, 2, 220, 4, 450, 6, -100];
+const arrayTest = [-10, 2, 220, 4, 450, 6, -100, 1000];
 console.log(arrayTest);
-console.log(zero(arrayTest));
+console.log(renameZero(arrayTest));
