@@ -1,4 +1,17 @@
-//--------lesson-2_task-1---------
+import {
+  palindrome,
+  min,
+  max,
+  maxTernary,
+  minTernary,
+  renameZero,
+  arrayThree,
+  randomArray,
+  randomArrayNegative,
+} from './src/lesson-3.js';
+import { sum, sumArrow, text, getColor } from './src/lesson-4.js';
+
+// //--------lesson-2_task-1---------
 let user = 'John Doe';
 
 console.log(user);
@@ -12,7 +25,7 @@ user = student;
 //Anna Kvasova
 console.log(user);
 
-//--------lesson-2_task-2---------
+// //--------lesson-2_task-2---------
 let test = 1;
 
 test += 1;
@@ -35,7 +48,7 @@ test = true;
 //true
 console.log(test);
 
-//--------lesson-2_task-3---------
+// //--------lesson-2_task-3---------
 const arrayOne = [2, 3, 5, 8];
 let result = 1;
 
@@ -59,25 +72,7 @@ for (let i = 0; i < arrayTwo.length; i += 1) {
   }
 }
 
-//--------lesson-3_task-1---------
-const palindrome = function (string) {
-  if (typeof string === 'undefined') {
-    return 'No data';
-  } else {
-    string = string
-      .toString()
-      .toLowerCase()
-      .split(' ')
-      .join('')
-      .replace(/[^a-zа-яё]/gi, '');
-    for (let i = 0; i < string.length; i += 1) {
-      if (string[i] !== string[string.length - 1 - i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
+// //--------lesson-3_task-1---------
 
 console.log(palindrome('шалаш')); //------true
 console.log(palindrome('шалаши')); //-----false
@@ -91,93 +86,44 @@ console.log(palindrome(345543)); //-----true
 console.log(palindrome('345800')); //------false
 console.log(palindrome('345543')); //------true
 
-let textPalindrome = 'довод';
-
-console.log(palindrome(textPalindrome)); //------true
-console.log(palindrome(textPalindrome + 'ы')); //------false
-
-textPalindrome = 'рандомное значение';
-
-// на примере 'шалаш' (length = 5; но! ш = 0, а = 1, л = 2, а = 3, ш = 4, т.е. =4):
-// for (let i = 0 (i = ш); i < string.length (порядковый номер меньше длины слова); i += 1 (переходим к след.букве) {
-//  if (string[i] (буква слова по порядку; i = 0 => i = ш) !== string[string.length - 1 - i] (длина - 1, чтобы соответствовало порядковым номерам (5-1=4) и минус порядковый номер буквы, чтобы сравнить слово в обратном порядке))
-// string[i=0] = ш     string[string.length - 1 - i] = ш (5-1-0) порядковый номер = 4
-// string[i=1] = а     string[string.length - 1 - i] = а (5-1-1) порядковый номер = 3
-// etc.
-
-//--------lesson-3_task-2---------
-const min = function (a, b) {
-  if (a < b) {
-    return a;
-  }
-  return b;
-};
+// //--------lesson-3_task-2---------
 
 console.log(min(5, 10));
 console.log(min(10, 3));
 console.log(min(10, 10));
 
-const max = function (a, b) {
-  if (a > b) {
-    return a;
-  }
-  return b;
-};
-
 console.log(max(5, 10));
 console.log(max(10, 3));
 console.log(max(10, 10));
-
-const minTernary = function (a, b) {
-  //------const minTernary = (a, b) => (a < b ? a : b);
-  return +(a < b ? a : b);
-};
 
 console.log(minTernary(5, 10));
 console.log(minTernary(10, 3));
 console.log(minTernary(10, 10));
 
-const maxTernary = function (a, b) {
-  //------const maxTernary = (a, b) => (a > b ? a : b);
-  return +(a > b ? a : b);
-};
-
 console.log(maxTernary(5, 10));
 console.log(maxTernary(10, 3));
 console.log(maxTernary(10, 10));
-
-//--------lesson-3_task-3---------
-const arrayThree = [10, 22, 42, 70, 100, 11, 40, 67, 8, 99];
-
-const renameZero = function (arr) {
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i] % 10 === 0) {
-      arr[i] = arr[i].toString().replaceAll('0', 'zero');
-    }
-  }
-  return arr;
-};
+//
+// //--------lesson-3_task-3---------
 
 console.log(arrayThree);
 console.log(renameZero(arrayThree));
 
-const arrayTest = [-10, 2, 220, 4, 450, 6, -100, 1000];
-console.log(arrayTest);
-console.log(renameZero(arrayTest));
+console.log(randomArray);
+console.log(renameZero(randomArray));
+
+console.log(randomArrayNegative);
+console.log(renameZero(randomArrayNegative));
 
 //--------lesson-4_task-1---------
-const sum = function (a) {
-  return function (b) {
-    return a + b;
-  };
-};
-
-const sumArrow = (a) => (b) => a + b;
 
 console.log(sum(5)(2));
 console.log(sumArrow(5)(2));
 
-//--------lesson-4_task-2---------
-// const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+// //--------lesson-4_task-2---------
 
-//--------lesson-4_task-3---------
+for (let i = 0; i < text.length; i += 1) {
+  text[i].addEventListener('click', getColor());
+}
+
+// //--------lesson-4_task-3---------
