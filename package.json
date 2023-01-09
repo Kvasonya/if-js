@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Kvasonya/if-js#readme",
   "devDependencies": {
+    "@ngneat/falso": "^6.4.0",
     "eslint": "^8.29.0",
     "husky": "^8.0.2",
     "jest": "^29.3.1",
