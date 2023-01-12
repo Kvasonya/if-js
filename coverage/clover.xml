@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1673537807914" clover="3.2.0">
-  <project timestamp="1673537807914" name="All files">
+<coverage generated="1673538084206" clover="3.2.0">
+  <project timestamp="1673538084207" name="All files">
     <metrics statements="69" coveredstatements="66" conditionals="26" coveredconditionals="21" methods="11" coveredmethods="11" elements="106" coveredelements="98" complexity="0" loc="69" ncloc="69" packages="1" files="2" classes="2"/>
     <file name="lesson-2.js" path="C:\dev\intellect-fox\if-js\src\lesson-2.js">
       <metrics statements="35" coveredstatements="35" conditionals="12" coveredconditionals="12" methods="1" coveredmethods="1"/>
