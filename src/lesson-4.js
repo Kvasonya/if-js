@@ -1,4 +1,3 @@
-export { sum, sumArrow, text, getColor };
 //--------lesson-4_task-1---------
 const sum = function (a) {
   return function (b) {
@@ -30,7 +29,7 @@ const getColor = function () {
 //   text[i].addEventListener('click', getColor());
 // }
 
-//Just for interest------How to add additional iteration in reverse order?
+//Just for interest------find how to add additional iteration in reverse order (30-20-10-20-30-20... etc)
 
 const sizes = ['30', '20', '10'];
 const text4 = document.getElementById('text4');
@@ -49,3 +48,7 @@ const getSize = function () {
 text4.addEventListener('click', getSize());
 
 //--------lesson-4_task-3---------
+
+//tests in tests/lesson-3.test.js
+
+export { sum, sumArrow, text, getColor };

@@ -1,17 +1,3 @@
-export {
-  palindrome,
-  min,
-  max,
-  minTernary,
-  maxTernary,
-  renameZero,
-  arrayThree,
-  generateArray,
-  randomArray,
-  generateArrayNegative,
-  randomArrayNegative,
-};
-
 //--------lesson-3_task-1---------
 const palindrome = function (string) {
   if (typeof string === 'undefined') {
@@ -22,7 +8,7 @@ const palindrome = function (string) {
       .toLowerCase()
       .split(' ')
       .join('')
-      .replace(/[^a-zа-яё]/gi, '');
+      .replace(/[^a-zа-яё0-9]/gi, '');
     for (let i = 0; i < string.length; i += 1) {
       if (string[i] !== string[string.length - 1 - i]) {
         return "It's not a palindrome";
@@ -81,3 +67,17 @@ const generateArrayNegative = (length, min, max) =>
 const randomArray = generateArray(10, 100);
 
 const randomArrayNegative = generateArrayNegative(12, -100, 1000);
+
+export {
+  palindrome,
+  min,
+  max,
+  minTernary,
+  maxTernary,
+  renameZero,
+  arrayThree,
+  generateArray,
+  randomArray,
+  generateArrayNegative,
+  randomArrayNegative,
+};
