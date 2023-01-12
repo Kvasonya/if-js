@@ -8,14 +8,14 @@ import {
 } from '../src/lesson-3.js';
 
 test('is the string a palindrome', () => {
-  const isPlindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];
-  const isNotPlindrome = ['шалаши', 'это не палиндром!', 1010];
+  const isPalindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];
+  const isNotPalindrome = ['шалаши', 'это не палиндром!', 1010];
 
-  for (let i = 0; i < isPlindrome.length; i += 1) {
-    expect(palindrome(isPlindrome[i])).toBe("It's a palindrome");
+  for (let i = 0; i < isPalindrome.length; i += 1) {
+    expect(palindrome(isPalindrome[i])).toBe("It's a palindrome");
   }
-  for (let i = 0; i < isPlindrome.length; i += 1) {
-    expect(palindrome(isNotPlindrome[i])).toBe("It's not a palindrome");
+  for (let i = 0; i < isPalindrome.length; i += 1) {
+    expect(palindrome(isNotPalindrome[i])).toBe("It's not a palindrome");
   }
 });
 

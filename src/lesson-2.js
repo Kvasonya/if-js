@@ -1,8 +1,7 @@
-export { user, student, test, arrayOne, arrayTwo, result };
 //--------lesson-2_task-1---------
 let user = 'John Doe';
 
-// console.log(user);
+console.log(user);
 
 const student = 'Anna Kvasova';
 
@@ -35,7 +34,7 @@ test = true;
 
 //true
 console.log(test);
-//
+
 //--------lesson-2_task-3---------
 const arrayOne = [2, 3, 5, 8];
 let result = 1;
@@ -45,15 +44,13 @@ for (let i = 0; i < arrayOne.length; i += 1) {
 }
 console.log(result);
 
-export const multiplication = function (arr) {
+const multiplication = function (arr) {
   let result = 1;
   for (let i = 0; i < arr.length; i += 1) {
     result = result * arr[i];
   }
   return result;
 };
-
-console.log(multiplication(arrayOne));
 
 const arrayTwo = [2, 5, 8, 15, 0, 6, 20, 3];
 
@@ -74,3 +71,5 @@ for (let i = 0; i < arrayTwo.length; i += 1) {
     console.log(arrayTwo[i]);
   }
 }
+
+export { user, student, test, arrayOne, arrayTwo, result, multiplication };
