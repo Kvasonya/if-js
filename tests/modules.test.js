@@ -1,22 +1,33 @@
 import {
+  multiplication,
   palindrome,
   min,
   max,
   maxTernary,
   minTernary,
   renameZero,
-} from '../src/lesson-3.js';
+} from '../src/modules.js';
+
+test('array data multiplication result', () => {
+  expect(multiplication([1, 2, 3, 4, 5])).toBe(120);
+});
 
 test('is the string a palindrome', () => {
   const isPalindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];
   const isNotPalindrome = ['шалаши', 'это не палиндром!', 1010];
+  const noData = undefined;
 
   for (let i = 0; i < isPalindrome.length; i += 1) {
-    expect(palindrome(isPalindrome[i])).toBe("It's a palindrome");
+    expect(palindrome(isPalindrome[i])).toBe(
+      `${isPalindrome[i]} - It's a palindrome`,
+    );
   }
   for (let i = 0; i < isPalindrome.length; i += 1) {
-    expect(palindrome(isNotPalindrome[i])).toBe("It's not a palindrome");
+    expect(palindrome(isNotPalindrome[i])).toBe(
+      `${isNotPalindrome[i]} - It's not a palindrome`,
+    );
   }
+  expect(palindrome(noData)).toBe('No data');
 });
 
 test('find the smallest number', () => {
