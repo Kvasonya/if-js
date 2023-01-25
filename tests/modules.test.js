@@ -6,11 +6,22 @@ import {
   maxTernary,
   minTernary,
   renameZero,
+  sum,
+  getNewDateFormatOne,
+  getNewDateFormatTwo,
+  getNewDateFormatThree,
+  newDateFormatReplacer,
+  getNewDateFormatFour,
+  searchPlace,
 } from '../src/modules.js';
+
+//lesson-2 tests
 
 test('array data multiplication result', () => {
   expect(multiplication([1, 2, 3, 4, 5])).toBe(120);
 });
+
+//lesson-3 tests
 
 test('is the string a palindrome', () => {
   const isPalindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];
@@ -52,4 +63,37 @@ test('rename number 0 to word zero', () => {
     15,
     '6zero7',
   ]);
+});
+
+//lesson-4 tests
+
+test('find the sum of two numbers', () => {
+  expect(sum(10)(5)).toBe(15);
+});
+
+//lesson-5 tests
+
+test('make a new date format (Y-M-D -> D.M.Y)', () => {
+  expect(getNewDateFormatOne('2023-01-25')).toBe('25.01.2023');
+  expect(getNewDateFormatTwo('2023-01-25')).toBe('25.01.2023');
+  expect(getNewDateFormatThree('2023-01-25')).toBe('25.01.2023');
+  expect(getNewDateFormatFour('2023-01-25')).toBe('25.01.2023');
+});
+
+test('make a new date format by using replacer (Y-M-D -> D.M.Y)', () => {
+  const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g;
+  expect(newDateFormatReplacer(regExp, '2023', '01', '25')).toBe('25.01.2023');
+});
+
+test('find all locations by search query', () => {
+  const findBerlin = ['Berlin', 'berlin', ' BErlin  '];
+  const queryEmpty = ' ';
+
+  for (let i = 0; i < findBerlin.length; i += 1) {
+    expect(searchPlace(findBerlin[i])).toStrictEqual([
+      'Germany, Berlin, Hostel Friendship',
+      'Germany, Berlin, Hotel Rehberge Berlin Mitte',
+    ]);
+  }
+  expect(searchPlace(queryEmpty)).toBe('Please, enter your query :)');
 });
