@@ -98,24 +98,14 @@ import {
 //lesson-6 tests
 
 test('find all locations by search query', () => {
-  const queryBerlin = ['Berlin', 'berlin', ' BErlin  '];
+  const queryGermany = ['Germany', 'germany', ' gErmany  '];
   const queryEmpty = ' ';
 
-  for (let i = 0; i < queryBerlin.length; i += 1) {
-    expect(searchPlaceByFilter(queryBerlin[i])).toEqual(
-      expect.objectContaining([
-        {
-          city: 'Berlin',
-          country: 'Germany',
-          hotel: 'Hostel Friendship',
-        },
-        {
-          city: 'Berlin',
-          country: 'Germany',
-          hotel: 'Hotel Rehberge Berlin Mitte',
-        },
-      ]),
-    );
+  for (let i = 0; i < queryGermany.length; i += 1) {
+    expect(searchPlaceByFilter(queryGermany[i])).toStrictEqual([
+      'Germany, Berlin, Hostel Friendship',
+      'Germany, Hamburg, Steigenberger Hotel',
+    ]);
   }
   expect(searchPlaceByFilter(queryEmpty)).toBe('Please, enter your query :)');
 });
