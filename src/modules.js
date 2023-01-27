@@ -170,6 +170,44 @@ function searchPlace(query) {
   }
 }
 
+const palindrome2 = (string) =>
+  string ===
+  string
+    .toLowerCase()
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/[^a-zа-яё0-9]/gi, '');
+
+function searchPlaceByFilter(query) {
+  let foundMatches = undefined;
+
+  function getStringForComparison(string) {
+    return string
+      .toLowerCase()
+      .split(' ')
+      .join('')
+      .replaceAll(/([^a-z])/gi, '');
+  }
+
+  if (query === undefined || query.trim() === '') {
+    return 'Please, enter your query :)';
+  } else {
+    const queryPlace = getStringForComparison(query);
+    foundMatches = data.filter(function callbackFn(item) {
+      return getStringForComparison(
+        item.country + item.city + item.hotel,
+      ).includes(queryPlace);
+    });
+  }
+
+  if (foundMatches.toString() === '') {
+    return 'Sorry, nothing found :(';
+  }
+
+  return foundMatches;
+}
+
 export {
   // multiplication,
   // palindrome,
@@ -179,8 +217,10 @@ export {
   // maxTernary,
   // renameZero,
   // sum,
-  getNewDateFormatOne,
-  getNewDateFormatTwo,
-  newDateFormatReplacer,
-  searchPlace,
+  // getNewDateFormatOne,
+  // getNewDateFormatTwo,
+  // newDateFormatReplacer,
+  // searchPlace,
+  palindrome2,
+  searchPlaceByFilter,
 };

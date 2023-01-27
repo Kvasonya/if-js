@@ -7,10 +7,11 @@ import {
   // minTernary,
   // renameZero,
   // sum,
-  getNewDateFormatOne,
-  getNewDateFormatTwo,
-  newDateFormatReplacer,
-  searchPlace,
+  // getNewDateFormatOne,
+  // getNewDateFormatTwo,
+  // newDateFormatReplacer,
+  // searchPlace,
+  searchPlaceByFilter,
 } from '../src/modules.js';
 
 // //lesson-2 tests
@@ -71,25 +72,50 @@ import {
 
 //lesson-5 tests
 
-test('make a new date format (Y-M-D -> D.M.Y)', () => {
-  expect(getNewDateFormatOne('2023-01-25')).toBe('25.01.2023');
-  expect(getNewDateFormatTwo('2023-01-25')).toBe('25.01.2023');
-});
+// test('make a new date format (Y-M-D -> D.M.Y)', () => {
+//   expect(getNewDateFormatOne('2023-01-25')).toBe('25.01.2023');
+//   expect(getNewDateFormatTwo('2023-01-25')).toBe('25.01.2023');
+// });
+//
+// test('make a new date format by using replacer (Y-M-D -> D.M.Y)', () => {
+//   const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g;
+//   expect(newDateFormatReplacer(regExp, '2023', '01', '25')).toBe('25.01.2023');
+// });
+//
+// test('find all locations by search query', () => {
+//   const queryBerlin = ['Berlin', 'berlin', ' BErlin  '];
+//   const queryEmpty = ' ';
+//
+//   for (let i = 0; i < queryBerlin.length; i += 1) {
+//     expect(searchPlace(queryBerlin[i])).toStrictEqual([
+//       'Germany, Berlin, Hostel Friendship',
+//       'Germany, Berlin, Hotel Rehberge Berlin Mitte',
+//     ]);
+//   }
+//   expect(searchPlace(queryEmpty)).toBe('Please, enter your query :)');
+// });
 
-test('make a new date format by using replacer (Y-M-D -> D.M.Y)', () => {
-  const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g;
-  expect(newDateFormatReplacer(regExp, '2023', '01', '25')).toBe('25.01.2023');
-});
+//lesson-6 tests
 
 test('find all locations by search query', () => {
   const queryBerlin = ['Berlin', 'berlin', ' BErlin  '];
   const queryEmpty = ' ';
 
   for (let i = 0; i < queryBerlin.length; i += 1) {
-    expect(searchPlace(queryBerlin[i])).toStrictEqual([
-      'Germany, Berlin, Hostel Friendship',
-      'Germany, Berlin, Hotel Rehberge Berlin Mitte',
-    ]);
+    expect(searchPlaceByFilter(queryBerlin[i])).toEqual(
+      expect.objectContaining([
+        {
+          city: 'Berlin',
+          country: 'Germany',
+          hotel: 'Hostel Friendship',
+        },
+        {
+          city: 'Berlin',
+          country: 'Germany',
+          hotel: 'Hotel Rehberge Berlin Mitte',
+        },
+      ]),
+    );
   }
-  expect(searchPlace(queryEmpty)).toBe('Please, enter your query :)');
+  expect(searchPlaceByFilter(queryEmpty)).toBe('Please, enter your query :)');
 });

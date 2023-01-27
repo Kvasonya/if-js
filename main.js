@@ -1,37 +1,18 @@
-//--------lesson-5_task-1---------
+//-----lesson-6_task-1
 
-//1 version
-const getNewDateFormatOne = function (date) {
-  const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g; //----не могу сообразить, как сделать в регулярном выражении, чтобы число было в месяцах только 01-12/1-12б а в днях 01-31(1-31)
-  return date.replace(regExp, '$<day>.$<month>.$<year>');
-};
+const palindrome2 = (string) =>
+  string ===
+  string
+    .toLowerCase()
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/[^a-zа-яё0-9]/gi, '');
 
-//2 version
-const newDateFormatReplacer = function (match, year, month, day) {
-  return [day, month, year].join('.');
-};
+console.log(palindrome2('шалаш'));
+console.log(palindrome2('Шалаш')); //-----why false?
 
-const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g;
-
-//or...
-const getNewDateFormatTwo = function (date) {
-  const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g;
-  return date.replace(regExp, newDateFormatReplacer);
-};
-
-//tests
-const date = '2020-11-26';
-const dateTest = '953-1-2';
-
-console.log(getNewDateFormatOne(date));
-
-console.log(date.replace(regExp, newDateFormatReplacer));
-
-console.log(getNewDateFormatTwo(date));
-
-console.log(dateTest.replace(regExp, newDateFormatReplacer));
-
-//--------lesson-5_task-2---------
+//------lesson-6_task-2
 
 const data = [
   {
@@ -76,8 +57,8 @@ const data = [
   },
 ];
 
-function searchPlace(query) {
-  const foundMatches = [];
+function searchPlaceByFilter(query) {
+  let foundMatches = undefined;
 
   function getStringForComparison(string) {
     return string
@@ -87,28 +68,22 @@ function searchPlace(query) {
       .replaceAll(/([^a-z])/gi, '');
   }
 
-  if (
-    query === undefined ||
-    query.trim() === '' ||
-    query.match(/[0-9]{5,}/gi)
-  ) {
-    //-----кагбэ, если больше определенного количества цифр в запросе (вообще необязательное условие)
+  if (query === undefined || query.trim() === '') {
     return 'Please, enter your query :)';
   } else {
-    for (let i = 0; i < data.length; i += 1) {
-      const namePlace = getStringForComparison(
-        data[i].country + data[i].city + data[i].hotel,
-      );
-      const queryPlace = getStringForComparison(query);
-      if (namePlace.includes(queryPlace)) {
-        foundMatches.push(
-          `${data[i].country}, ${data[i].city}, ${data[i].hotel}`,
-        );
-      }
-    }
-    return foundMatches; //-----как добавить сообщение в случае, если ничего не найдено, т.е. на выходе пустой массив?
+    const queryPlace = getStringForComparison(query);
+    foundMatches = data.filter(function callbackFn(item) {
+      return getStringForComparison(
+        item.country + item.city + item.hotel,
+      ).includes(queryPlace);
+    });
   }
+
+  if (foundMatches.toString() === '') {
+    return 'Sorry, nothing found :(';
+  }
+
+  return foundMatches;
 }
-console.log(searchPlace(' ')); //-----Please, enter your query :)
-console.log(searchPlace('Russia'));
-console.log(searchPlace(' germany ')); //------как сделать, чтобы выдавало результат при запросе вида 'berlin germany', 'germany hostel' итп? и как быть с грамматическими ошибками (rassia) или опечатками (напр., Berlinm)?
+
+console.log(searchPlaceByFilter(' germany'));
