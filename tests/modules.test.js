@@ -1,111 +1,100 @@
 import {
-  // multiplication,
-  // palindrome,
-  // min,
-  // max,
-  // maxTernary,
-  // minTernary,
-  // renameZero,
-  // sum,
-  // getNewDateFormatOne,
-  // getNewDateFormatTwo,
-  // newDateFormatReplacer,
-  // searchPlace,
+  checkPalindrome2,
   searchPlaceByFilter,
+  uniqueItems,
+  uniqueObjByOneKey,
+  getCitiesInCountries,
 } from '../src/modules.js';
-
-// //lesson-2 tests
-//
-// test('array data multiplication result', () => {
-//   expect(multiplication([1, 2, 3, 4, 5])).toBe(120);
-// });
-//
-// //lesson-3 tests
-//
-// test('is the string a palindrome', () => {
-//   const isPalindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];
-//   const isNotPalindrome = ['шалаши', 'это не палиндром!', 1010];
-//   const noData = undefined;
-//
-//   for (let i = 0; i < isPalindrome.length; i += 1) {
-//     expect(palindrome(isPalindrome[i])).toBe(
-//       `${isPalindrome[i]} - It's a palindrome`,
-//     );
-//   }
-//   for (let i = 0; i < isPalindrome.length; i += 1) {
-//     expect(palindrome(isNotPalindrome[i])).toBe(
-//       `${isNotPalindrome[i]} - It's not a palindrome`,
-//     );
-//   }
-//   expect(palindrome(noData)).toBe('No data');
-// });
-//
-// test('find the smallest number', () => {
-//   expect(min(5, 3)).toBe(3);
-//   expect(minTernary(5, 3)).toBe(3);
-// });
-//
-// test('find the largest number', () => {
-//   expect(max(5, 3)).toBe(5);
-//   expect(maxTernary(5, 3)).toBe(5);
-// });
-//
-// test('rename number 0 to word zero', () => {
-//   const arrayTest = [10, 22, 70, 100, -10, 40, 15, 607];
-//   expect(renameZero(arrayTest)).toStrictEqual([
-//     '1zero',
-//     22,
-//     '7zero',
-//     '1zerozero',
-//     '-1zero',
-//     '4zero',
-//     15,
-//     '6zero7',
-//   ]);
-// });
-//
-// //lesson-4 tests
-//
-// test('find the sum of two numbers', () => {
-//   expect(sum(10)(5)).toBe(15);
-// });
-
-//lesson-5 tests
-
-// test('make a new date format (Y-M-D -> D.M.Y)', () => {
-//   expect(getNewDateFormatOne('2023-01-25')).toBe('25.01.2023');
-//   expect(getNewDateFormatTwo('2023-01-25')).toBe('25.01.2023');
-// });
-//
-// test('make a new date format by using replacer (Y-M-D -> D.M.Y)', () => {
-//   const regExp = /(?<year>\d+)-(?<month>\d{1,2})-(?<day>\d{1,2})/g;
-//   expect(newDateFormatReplacer(regExp, '2023', '01', '25')).toBe('25.01.2023');
-// });
-//
-// test('find all locations by search query', () => {
-//   const queryBerlin = ['Berlin', 'berlin', ' BErlin  '];
-//   const queryEmpty = ' ';
-//
-//   for (let i = 0; i < queryBerlin.length; i += 1) {
-//     expect(searchPlace(queryBerlin[i])).toStrictEqual([
-//       'Germany, Berlin, Hostel Friendship',
-//       'Germany, Berlin, Hotel Rehberge Berlin Mitte',
-//     ]);
-//   }
-//   expect(searchPlace(queryEmpty)).toBe('Please, enter your query :)');
-// });
 
 //lesson-6 tests
 
+test('is the string a palindrome', () => {
+  const isPalindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];
+  const isNotPalindrome = ['шалаши', 'это не палиндром!', 1010];
+
+  // isNotPalindrome.every(function (str) { expect.palindrome2 }) //-----норм? а как сделать то же самое для false?
+
+  for (let i = 0; i < isPalindrome.length; i += 1) {
+    expect(checkPalindrome2(isPalindrome[i])).toBeTruthy();
+  }
+  for (let i = 0; i < isPalindrome.length; i += 1) {
+    expect(checkPalindrome2(isNotPalindrome[i])).toBeFalsy();
+  }
+});
+
 test('find all locations by search query', () => {
+  const data = [
+    { name: 'Hostel Friendship', city: 'Berlin', country: 'Germany' },
+    { name: 'Steigenberger Hotel', city: 'Hamburg', country: 'Germany' },
+  ];
   const queryGermany = ['Germany', 'germany', ' gErmany  '];
   const queryEmpty = ' ';
 
   for (let i = 0; i < queryGermany.length; i += 1) {
-    expect(searchPlaceByFilter(queryGermany[i])).toStrictEqual([
+    expect(searchPlaceByFilter(queryGermany[i], data)).toStrictEqual([
       'Germany, Berlin, Hostel Friendship',
       'Germany, Hamburg, Steigenberger Hotel',
     ]);
   }
   expect(searchPlaceByFilter(queryEmpty)).toBe('Please, enter your query :)');
+});
+
+test('find unique elements in array', () => {
+  const data = [
+    'un chat',
+    'un chien',
+    'un oiseau',
+    'une chatte',
+    'un chat',
+    'un cheval',
+    'un oiseau',
+  ];
+  expect(uniqueItems(data)).toStrictEqual([
+    'un chat',
+    'un chien',
+    'un oiseau',
+    'une chatte',
+    'un cheval',
+  ]);
+});
+
+test('find unique objects in array', () => {
+  const data = [
+    { firstname: 'Bella', lastname: 'Goth' },
+    { firstname: 'Don', lastname: 'Lotario' },
+    { firstname: 'Mortimer', lastname: 'Goth' },
+  ];
+  expect(uniqueObjByOneKey(data, 'lastname')).toStrictEqual([
+    { firstname: 'Bella', lastname: 'Goth' },
+    { firstname: 'Don', lastname: 'Lotario' },
+  ]);
+});
+
+test('create a list of unique countries and cities in those countries', () => {
+  const data = [
+    {
+      name: 'Apartment Sunshine',
+      city: 'Santa Cruz de Tenerife',
+      country: 'Spain',
+    },
+    {
+      name: 'Lux Isla',
+      city: 'Ibiza',
+      country: 'Spain',
+    },
+    {
+      name: 'Adagio Aparthotel',
+      city: 'Edinburgh',
+      country: 'UK',
+    },
+    {
+      name: 'DOUBLE for TEST',
+      city: 'Edinburgh',
+      country: 'UK',
+    },
+  ];
+  expect(getCitiesInCountries(data)).toStrictEqual({
+    UK: ['Edinburgh'],
+    Spain: ['Santa Cruz de Tenerife', 'Ibiza'],
+  });
 });

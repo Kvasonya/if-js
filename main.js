@@ -1,18 +1,26 @@
-//-----lesson-6_task-1
+//-----lesson-6_task-1 (IIFE)
+(function () {
+  const checkPalindrome2 = (str) => {
+    str = str
+      .toString()
+      .toLowerCase()
+      .replace(/[^a-zа-яё0-9]/gi, '');
+    return str === str.split('').reverse().join('');
+  };
 
-const palindrome2 = (string) =>
-  string ===
-  string
-    .toLowerCase()
-    .split('')
-    .reverse()
-    .join('')
-    .replace(/[^a-zа-яё0-9]/gi, '');
-
-console.log(palindrome2('шалаш'));
-console.log(palindrome2('Шалаш')); //-----why false?
+  console.log(checkPalindrome2('Миру - мир, Риму - Рим'));
+  console.log(checkPalindrome2('Шалаш'));
+})();
 
 //------lesson-6_task-2
+
+const getStringForComparison = (str) =>
+  str
+    .toString()
+    .toLowerCase()
+    .split(' ')
+    .join('')
+    .replaceAll(/([^a-zа-яё0-9])/gi, '');
 
 const hotels = [
   {
@@ -170,39 +178,87 @@ const hotels = [
     city: 'Hamburg',
     country: 'Germany',
   },
+  {
+    name: 'DOUBLE for TEST',
+    city: 'Edinburgh',
+    country: 'UK',
+  },
 ];
 
-function searchPlaceByFilter(query) {
-  let foundMatches = undefined;
+const searchPlaceByFilter = (query, data) => {
+  let foundMatches = [];
+  const queryPlace = getStringForComparison(query);
 
-  function getStringForComparison(string) {
-    return string
-      .toLowerCase()
-      .split(' ')
-      .join('')
-      .replaceAll(/([^a-z])/gi, '');
-  }
-
-  if (query === undefined || query.trim() === '') {
+  if (queryPlace.trim() === '') {
     return 'Please, enter your query :)';
   } else {
-    const queryPlace = getStringForComparison(query);
-    foundMatches = hotels
-      .filter(function callbackFn(item) {
-        return getStringForComparison(
-          item.country + item.city + item.name,
-        ).includes(queryPlace);
-      })
-      .map((item) => {
-        return `${item.country}, ${item.city}, ${item.name}`;
-      });
+    foundMatches = data
+      .filter((item) =>
+        getStringForComparison(item.country + item.city + item.name).includes(
+          queryPlace,
+        ),
+      )
+      .map((item) => `${item.country}, ${item.city}, ${item.name}`);
+    if (foundMatches.toString() === '') {
+      return 'Sorry, nothing found :(';
+    }
   }
-
-  if (foundMatches.toString() === '') {
-    return 'Sorry, nothing found :(';
-  }
-
   return foundMatches;
-}
+};
 
-console.log(searchPlaceByFilter(' germany'));
+console.log(searchPlaceByFilter(' germany', hotels));
+console.log(searchPlaceByFilter(' Atlantis', hotels));
+
+//lesson-6_task-3
+
+// const copyArray = (arr) => [...arr];
+//
+// const uniqueItems = (arr) => arr.filter((item, index) => index === arr.indexOf(item));
+
+const uniqueObjByOneKey = (arr, keyname) => {
+  return [...arr].reduce((listItems, currentValue) => {
+    if (!listItems.find((item) => item[keyname] === currentValue[keyname])) {
+      listItems.push(currentValue);
+    }
+    return listItems;
+  }, []);
+};
+
+const getCitiesInCountries = (data) => {
+  const uniqueCountries = uniqueObjByOneKey(data, 'country').map(
+    (item) => item.country,
+  );
+
+  const uniqueCities = uniqueObjByOneKey(data, 'city');
+
+  const listCountries = {};
+
+  uniqueCountries.forEach((uniqCountry) => {
+    listCountries[uniqCountry] = [];
+
+    uniqueCities.forEach((item) => {
+      if (item.country.includes(uniqCountry)) {
+        listCountries[uniqCountry].push(item.city);
+      }
+    });
+  });
+  return listCountries;
+};
+
+console.log(getCitiesInCountries(hotels));
+
+//lesson-6_task-4
+
+//
+// const daysInMonth = 30;
+// const daysInWeek = 7;
+// const dayOfWeek = 4; // в моем примере понедельник равен 0. У вас может отличаться
+//
+//
+// const getCalendarMonth = function (month, week, day) {
+//   if (day > 6) {
+//     return '';
+//   }
+//
+// };
+// // const calendarMonth = getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek);
