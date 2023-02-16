@@ -14,6 +14,7 @@ const getStringForComparison = (str) =>
   str
     .toString()
     .toLowerCase()
+    .trim()
     .split(' ')
     .join('')
     .replaceAll(/([^a-zа-яё0-9])/gi, '');
@@ -22,7 +23,7 @@ const searchPlaceByFilter = (query, data) => {
   let foundMatches = [];
   const queryPlace = getStringForComparison(query);
 
-  if (queryPlace.trim() === '') {
+  if (!queryPlace) {
     return 'Please, enter your query :)';
   } else {
     foundMatches = data
@@ -41,7 +42,7 @@ const searchPlaceByFilter = (query, data) => {
 
 //lesson-6_task-3
 
-const copyArray = (arr) => [...arr];
+// const copyArray = (arr) => [...arr];
 
 const uniqueItems = (arr) =>
   arr.filter((item, index) => index === arr.indexOf(item));

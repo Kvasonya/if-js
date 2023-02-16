@@ -17,6 +17,7 @@
 const getStringForComparison = (str) =>
   str
     .toString()
+    .trim()
     .toLowerCase()
     .split(' ')
     .join('')
@@ -189,7 +190,7 @@ const searchPlaceByFilter = (query, data) => {
   let foundMatches = [];
   const queryPlace = getStringForComparison(query);
 
-  if (queryPlace.trim() === '') {
+  if (!queryPlace) {
     return 'Please, enter your query :)';
   } else {
     foundMatches = data
@@ -208,6 +209,7 @@ const searchPlaceByFilter = (query, data) => {
 
 console.log(searchPlaceByFilter(' germany', hotels));
 console.log(searchPlaceByFilter(' Atlantis', hotels));
+console.log(searchPlaceByFilter(' ', hotels));
 
 //lesson-6_task-3
 
@@ -246,19 +248,3 @@ const getCitiesInCountries = (data) => {
 };
 
 console.log(getCitiesInCountries(hotels));
-
-//lesson-6_task-4
-
-//
-// const daysInMonth = 30;
-// const daysInWeek = 7;
-// const dayOfWeek = 4; // в моем примере понедельник равен 0. У вас может отличаться
-//
-//
-// const getCalendarMonth = function (month, week, day) {
-//   if (day > 6) {
-//     return '';
-//   }
-//
-// };
-// // const calendarMonth = getCalendarMonth(daysInMonth, daysInWeek, dayOfWeek);
