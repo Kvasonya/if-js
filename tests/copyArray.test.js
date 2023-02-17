@@ -5,5 +5,5 @@ test('create a copy of the array', () => {
   const link = arr;
   const copy = copyArray(arr);
   expect(copyArray(arr)).toStrictEqual([1, 2, 3]);
-  expect(arr === link && arr !== copy).toBeTruthy();
+  expect(arr === link && arr !== copy && copy !== link).toBeTruthy();
 });
