@@ -1,6 +1,7 @@
 export const getStringForComparison = (str) =>
   str
     .toString()
+    .trim()
     .toLowerCase()
     .split(' ')
     .join('')
