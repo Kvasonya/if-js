@@ -1,4 +1,4 @@
-import { searchPlace } from '../src/searchPlace';
+import { searchPlace, searchPlaceByFilter } from '../src/searchPlace';
 
 test('find all locations by search query', () => {
   const data = [
@@ -20,4 +20,21 @@ test('find all locations by search query', () => {
     ]);
   }
   expect(searchPlace(queryEmpty)).toBe('Please, enter your query :)');
+});
+
+test('find all locations by search query', () => {
+  const data = [
+    { name: 'Hostel Friendship', city: 'Berlin', country: 'Germany' },
+    { name: 'Steigenberger Hotel', city: 'Hamburg', country: 'Germany' },
+  ];
+  const queryGermany = ['Germany', 'germany', ' gErmany  '];
+  const queryEmpty = ' ';
+
+  for (let i = 0; i < queryGermany.length; i += 1) {
+    expect(searchPlaceByFilter(queryGermany[i], data)).toStrictEqual([
+      'Germany, Berlin, Hostel Friendship',
+      'Germany, Hamburg, Steigenberger Hotel',
+    ]);
+  }
+  expect(searchPlaceByFilter(queryEmpty)).toBe('Please, enter your query :)');
 });

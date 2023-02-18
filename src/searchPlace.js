@@ -1,13 +1,7 @@
+import { getStringForComparison } from './stringComparison';
+
 export const searchPlace = (query, data) => {
   const foundMatches = [];
-
-  function getStringForComparison(str) {
-    return str
-      .toLowerCase()
-      .split(' ')
-      .join('')
-      .replaceAll(/([^a-z])/gi, '');
-  }
 
   if (query.trim() === '' || query.match(/[0-9]{5,}/gi)) {
     return 'Please, enter your query :)';
@@ -30,4 +24,25 @@ export const searchPlace = (query, data) => {
 
     return foundMatches;
   }
+};
+
+export const searchPlaceByFilter = (query, data) => {
+  let foundMatches = [];
+  const queryPlace = getStringForComparison(query);
+
+  if (!queryPlace) {
+    return 'Please, enter your query :)';
+  } else {
+    foundMatches = data
+      .filter((item) =>
+        getStringForComparison(item.country + item.city + item.name).includes(
+          queryPlace,
+        ),
+      )
+      .map((item) => `${item.country}, ${item.city}, ${item.name}`);
+    if (foundMatches.toString() === '') {
+      return 'Sorry, nothing found :(';
+    }
+  }
+  return foundMatches;
 };
