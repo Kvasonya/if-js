@@ -1,4 +1,4 @@
-import { searchPlace, searchPlaceByFilter } from '../src/searchPlace';
+import { searchPlace, searchPlaceByFilter } from '../src/scripts/searchPlace.js';
 
 test('find all locations by search query', () => {
   const data = [

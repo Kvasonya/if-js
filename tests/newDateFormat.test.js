@@ -2,7 +2,7 @@ import {
   getNewDateFormatOne,
   getNewDateFormatTwo,
   newDateFormatReplacer,
-} from '../src/newDateFormat';
+} from '../src/scripts/newDateFormat.js';
 
 test('make a new date format (Y-M-D -> D.M.Y)', () => {
   expect(getNewDateFormatOne('2023-01-25')).toBe('25.01.2023');

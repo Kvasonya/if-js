@@ -1,5 +1,5 @@
-import { isSameType, isSameEl } from './isSame';
-import { simpleArrComparison } from './simpleArrComparison';
+import { isSameType, isSameEl } from './isSame.js';
+import { simpleArrComparison } from './simpleArrComparison.js';
 
 export const deepEqual = (object1, object2) => {
   if (!isSameType('object', object1, object2)) {

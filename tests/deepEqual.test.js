@@ -1,4 +1,4 @@
-import { deepEqual } from '../src/deepEqual';
+import { deepEqual } from '../src/scripts/deepEqual.js';
 
 test('are two objects the same?', () => {
   const obj1 = {

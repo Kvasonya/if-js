@@ -1,4 +1,4 @@
-import { isSameType, isSameEl } from '../src/isSame';
+import { isSameType, isSameEl } from '../src/scripts/isSame.js';
 
 test('are all elements of the same type?', () => {
   const nums = [1, 2, 3, 1000];
