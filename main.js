@@ -23,6 +23,10 @@ class Student extends User {
     const currentYear = 2023;
     return currentYear - this.admissionYear;
   }
+
+  get graduation() {
+    return this.admissionYear + 5;
+  }
 }
 
 class Students {
@@ -42,9 +46,20 @@ class Students {
 Students.prototype.getInfo = function () {
   return this.students
     .sort((a, b) => a.course - b.course)
+    .filter((student) => student.course >= 1 && student.course <= 5)
     .map(
       (student) =>
         `${student.fullName} - ${student.courseName}, ${student.course} курс`,
+    );
+};
+
+Students.prototype.getInfoGraduates = function () {
+  return this.students
+    .sort()
+    .filter((student) => student.course > 5)
+    .map(
+      (student) =>
+        `${student.fullName} - ${student.courseName}, год выпуска: ${student.graduation}`,
     );
 };
 
@@ -77,3 +92,4 @@ const studentsData = [
 
 const students = new Students(studentsData);
 console.log(students.getInfo());
+console.log(students.getInfoGraduates());

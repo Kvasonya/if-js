@@ -11,4 +11,8 @@ export default class Student extends User {
     const currentYear = 2023;
     return currentYear - this.admissionYear;
   }
+
+  get graduation() {
+    return this.admissionYear + 5;
+  }
 }

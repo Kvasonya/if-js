@@ -17,8 +17,19 @@ export default class Students {
 Students.prototype.getInfo = function () {
   return this.students
     .sort((a, b) => a.course - b.course)
+    .filter((student) => student.course >= 1 && student.course <= 5)
     .map(
       (student) =>
         `${student.fullName} - ${student.courseName}, ${student.course} курс`,
+    );
+};
+
+Students.prototype.getInfoGraduates = function () {
+  return this.students
+    .sort()
+    .filter((student) => student.course > 5)
+    .map(
+      (student) =>
+        `${student.fullName} - ${student.courseName}, год выпуска: ${student.graduation}`,
     );
 };
