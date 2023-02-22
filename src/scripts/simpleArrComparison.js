@@ -6,4 +6,3 @@ export const simpleArrComparison = (arr1, arr2) => {
   const arrToStr = (arr) => arr.sort().join('');
   return arrToStr(arr1) === arrToStr(arr2);
 };
-
