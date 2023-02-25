@@ -1,4 +1,4 @@
-import { palindrome, checkPalindrome2 } from '../src/palindrome';
+import { palindrome, checkPalindrome2 } from '../src/scripts/palindrome.js';
 
 test('is the string a palindrome', () => {
   const isPalindrome = ['шалаш', 'Миру – мир, Риму – Рим', 1001];

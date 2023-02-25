@@ -10,7 +10,7 @@ import {
   sum,
   sumArrow,
   sumArray,
-} from '../src/arithmetic';
+} from '../src/scripts/arithmetic.js';
 
 test('array data multiplication result', () => {
   expect(multiplication([1, 2, 3, 4, 5])).toBe(120);

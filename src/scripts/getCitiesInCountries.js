@@ -1,4 +1,4 @@
-import { uniqueObjByOneKey } from './uniqueItems';
+import { uniqueObjByOneKey } from './uniqueItems.js';
 
 export const getCitiesInCountries = (data) => {
   const uniqueCountries = uniqueObjByOneKey(data, 'country').map(

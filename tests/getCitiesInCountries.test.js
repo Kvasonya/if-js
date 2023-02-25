@@ -1,4 +1,4 @@
-import { getCitiesInCountries } from '../src/getCitiesInCountries';
+import { getCitiesInCountries } from '../src/scripts/getCitiesInCountries.js';
 
 test('create a list of unique countries and cities in those countries', () => {
   const data = [

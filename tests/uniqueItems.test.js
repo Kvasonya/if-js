@@ -1,4 +1,4 @@
-import { uniqueItems, uniqueObjByOneKey } from '../src/uniqueItems';
+import { uniqueItems, uniqueObjByOneKey } from '../src/scripts/uniqueItems.js';
 
 test('find unique elements in array', () => {
   const data = [
