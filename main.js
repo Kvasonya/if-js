@@ -20,7 +20,7 @@ class Student extends User {
   }
 
   get course() {
-    const currentYear = 2023;
+    const currentYear = new Date().getFullYear();
     return currentYear - this.admissionYear;
   }
 
