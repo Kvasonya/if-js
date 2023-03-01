@@ -1,5 +1,3 @@
-// ------lesson-9_task-1
-
 const allText = document.querySelectorAll('.text-color-js');
 
 const colors = {
