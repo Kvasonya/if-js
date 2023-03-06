@@ -1,0 +1,87 @@
+.hotels-preferred {
+  order: 3;
+  padding-bottom: var(--delimiter-section);
+}
+.hotels-preferred__container {
+  position: relative;
+}
+.hotels-preferred__title {
+  padding-top: var(--delimiter-section);
+  margin-bottom: var(--title-indent);
+}
+.hotels-preferred__slider {
+  padding-bottom: var(--delimiter-section);
+  position: relative;
+}
+.hotels-preferred__slider-round-button {
+  position: absolute;
+  top: calc(var(--img-width) / 2);
+}
+.hotels-preferred__slider-round-button-prev {
+  transform: translate(-50%, 0) rotate(180deg);
+  left: 0;
+}
+.hotels-preferred__slider-round-button-next {
+  overflow: visible;
+  left: calc(var(--container-width) - (var(--unit-sm)) * 2);
+  transform: translate(-50%, 0);
+}
+@media screen and (max-width: 1280px) {
+  .hotels-preferred__title {
+    margin-bottom: 6.5rem;
+  }
+  .hotels-preferred__slider-round-button-next {
+    left: calc(var(--container-width) - (var(--unit-sm)) * 3);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .hotels-preferred__title {
+    margin-bottom: var(--delimiter-section);
+  }
+  .hotels-preferred__slider-round-button-next {
+    left: calc(var(--container-width) - (var(--unit-sm)) * 2.5);
+  }
+}
+@media screen and (max-width: 768px) {
+  .hotels-preferred__title {
+    margin-bottom: 3.2rem;
+  }
+  .hotels-preferred__slider {
+    padding-bottom: var(--delimiter-section);
+  }
+  .hotels-preferred__slider-round-button {
+    transform: translate(-50%, 25%);
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .hotels-preferred__slider-round-button-prev {
+    left: 0;
+    right: 0;
+    transform: translate(-50%, 25%) rotate(180deg);
+  }
+  .hotels-preferred__slider-round-button-next {
+    left: 100%;
+  }
+  .hotels-preferred__slider-round-button-next {
+    overflow: visible;
+    left: 100%;
+  }
+  .swiper-slide.hotels-preferred-swiper-slide {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .swiper-slide-active.hotels-preferred-swiper-slide {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .swiper-slide-next.hotels-preferred-swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .swiper-slide-next.hotels-preferred-swiper-slide {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,18 @@
+.top-section__slogan {
+  margin: 21rem 0 14rem;
+  font-size: 5rem;
+  font-weight: var(--medium);
+  line-height: 5.9rem;
+  color: var(--white);
+}
+@media screen and (max-width: 1024px) {
+  .top-section__slogan {
+    margin: 5rem 0 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-section__slogan {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}

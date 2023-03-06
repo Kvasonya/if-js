@@ -1,0 +1,33 @@
+/*Global styles and components*/
+@import 'global.css';
+@import 'fonts.css';
+@import 'variables.css';
+@import 'grid.css';
+
+@import 'components/slider.css';
+
+/*Header*/
+@import 'sections/header.css';
+
+/*Top-section*/
+@import 'sections/top-section/form.css';
+@import 'sections/top-section/slogan.css';
+@import 'sections/top-section/markets.css';
+
+/*Features*/
+@import 'sections/features.css';
+
+/*Hotels preferred (Homes guests loves)*/
+@import 'sections/hotels-preferred.css';
+
+/*Destinations*/
+@import 'sections/destinations.css';
+
+/*Reviews*/
+@import 'sections/reviews.css';
+
+/*Sign-up*/
+@import 'sections/sign-up.css';
+
+/*Footer*/
+@import 'sections/footer.css';
