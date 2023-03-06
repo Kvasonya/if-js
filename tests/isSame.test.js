@@ -1,4 +1,9 @@
-import { isSameType, isSameEl } from '../src/scripts/isSame.js';
+import {
+  isSameType,
+  isSameEl,
+  isSameTypeArr,
+  isSameElArr,
+} from '../src/scripts/isSame.js';
 
 test('are all elements of the same type?', () => {
   const nums = [1, 2, 3, 1000];
@@ -30,4 +35,23 @@ test('are all elements of the same?', () => {
     isSameEl('ukulele', 'guitar', 'piano') && isSameEl(1, 100, 10),
   ).toBeFalsy();
   expect(isSameEl('lol', 'lol', 'lol') && isSameEl(1, 1, 1)).toBeTruthy();
+});
+
+test('are all elements in array of the same type?', () => {
+  const nums = [1, 2, 3, 1000];
+  const strings = ['Salut', 'Hello', 'Привет'];
+
+  expect(
+    isSameTypeArr('number', nums) && isSameTypeArr('string', strings),
+  ).toBeTruthy();
+});
+
+test('are all elements in array the same?', () => {
+  const arr = [1, 1, 1];
+  const arr2 = ['1', '1', '1'];
+  const arr3 = [1, '1', 1];
+  const arr4 = [1, 100, 1];
+
+  expect(isSameElArr(arr) && isSameElArr(arr2)).toBeTruthy();
+  expect(isSameElArr(arr3) && isSameElArr(arr4)).toBeFalsy();
 });

@@ -16,6 +16,11 @@ test('find all locations by search query', () => {
   const queryBerlin = ['Berlin', 'berlin', ' BErlin  '];
   const queryEmpty = ' ';
 
+  // queryBerlin.forEach((example) => expect(searchPlace(example, data)).toStrictEqual([
+  //   'Germany, Berlin, Hostel Friendship',
+  //   'Germany, Berlin, Hotel Rehberge Berlin Mitte',
+  // ])); //-----???
+
   for (let i = 0; i < queryBerlin.length; i += 1) {
     expect(searchPlace(queryBerlin[i], data)).toStrictEqual([
       'Germany, Berlin, Hostel Friendship',
