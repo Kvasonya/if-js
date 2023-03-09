@@ -1,13 +1,16 @@
 .features {
   order: 2;
 }
+
 .features__container {
   flex-wrap: wrap;
   margin-bottom: var(--delimiter-section);
 }
+
 .features__title {
   margin: var(--delimiter-section) 0 var(--title-indent);
 }
+
 .features__title:after {
   content: '';
   display: block;
@@ -19,11 +22,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .features__content {
   display: flex;
   flex-wrap: wrap;
   margin: 0 calc(var(--unit-xs) * -1);
 }
+
 .features__content-item {
   padding-left: var(--unit-xs);
   padding-right: var(--unit-xs);
@@ -33,17 +38,21 @@
   flex-direction: column;
   align-items: center;
 }
+
 .features__content-icon {
   max-width: 10rem;
   max-height: 9.2rem;
   color: var(--primary-light);
 }
+
 .features__content-icon_book {
   padding-top: 1.3rem;
 }
+
 .features__content-icon_communicate {
   padding-top: 0.8rem;
 }
+
 .features__content-text {
   font-weight: var(--regular);
   font-size: 2.4rem;
@@ -51,42 +60,52 @@
   color: var(--text-color);
   text-align: center;
 }
+
 @media screen and (max-width: 1280px) {
   .features__content-text {
     font-size: 2.3rem;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .features__container {
     margin-bottom: var(--delimiter-section);
   }
+
   .features__title:after {
     display: none;
   }
+
   .features__content-item {
     height: 15rem;
     margin-bottom: 4rem;
     padding: 0;
   }
+
   .features__content-icon {
     max-height: 8rem;
   }
+
   .features__content-text {
     font-size: 2.2rem;
   }
 }
+
 @media screen and (max-width: 768px) {
   .features__container {
     margin-bottom: var(--delimiter-section);
   }
+
   .features__title {
     margin: 2.4rem 0 3.6rem;
   }
+
   .features__content {
     flex-direction: column;
     align-content: center;
     margin: 0;
   }
+
   .features__content-item {
     height: 10.4rem;
     margin-bottom: 3rem;
@@ -95,15 +114,18 @@
     flex-direction: column;
     align-items: center;
   }
+
   .features__content-item:last-child {
     margin-bottom: 0;
   }
+
   .features__content-icon {
     max-width: 7rem;
     max-height: 6.4rem;
     aspect-ratio: 1;
     padding: 0;
   }
+
   .features__content-text {
     font-size: 1.5rem;
     line-height: 1.8rem;

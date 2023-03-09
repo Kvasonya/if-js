@@ -1,10 +1,12 @@
 .destinations {
   order: 4;
 }
+
 .destinations__title {
   padding-top: var(--delimiter-section);
   margin-bottom: var(--title-indent);
 }
+
 .destinations__buttons {
   width: calc((var(--container-width) / 2) - (var(--unit-xs)));
   height: 6.4rem;
@@ -14,6 +16,7 @@
   display: grid;
   grid-template-columns: 30% 30% 40%;
 }
+
 .destinations__buttons-button {
   height: 100%;
   border: none;
@@ -24,17 +27,21 @@
   line-height: 2.8rem;
   color: var(--text-color);
 }
+
 .destinations__buttons-button:nth-child(3):after {
   content: ' of interest';
 }
+
 .destinations__buttons-button:focus {
   background-color: var(--primary-light);
   color: var(--white);
 }
+
 .destinations__slider {
   margin-bottom: var(--delimiter-section);
   position: relative;
 }
+
 .destinations__slider-round-button {
   position: absolute;
   left: calc((var(--container-width) / 2) - (var(--unit-sm)));
@@ -42,13 +49,16 @@
   transform: translate(-50%, -50%) rotate(90deg);
   box-shadow: 2px 0 3px 0 var(--secondary-text);
 }
+
 .destinations__slider-booking-button {
   height: 4.8rem;
   width: calc(var(--img-width) - 56%);
 }
+
 .destinations__slider-content-link {
   margin-bottom: 0;
 }
+
 @media screen and (max-width: 1024px) {
   .destinations__buttons {
     width: calc(var(--container-width) - (var(--unit-sm) * 2));
@@ -58,11 +68,13 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: var(--unit-sm);
   }
+
   .destinations__buttons-button {
     background-color: var(--white);
     border: 0.1rem solid var(--stroke-color);
     border-radius: 8px;
   }
+
   .destinations__slider-round-button {
     left: calc(var(--container-width) - (var(--unit-sm) * 2));
     top: calc(var(--img-width) / 2);
@@ -70,10 +82,12 @@
     transform: translate(-50%, -50%) rotate(0deg);
   }
 }
+
 @media screen and (max-width: 768px) {
   .destinations__title {
     margin-bottom: 3.2rem;
   }
+
   .destinations__buttons {
     min-width: var(--container-width);
     width: auto;
@@ -84,13 +98,16 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: var(--unit-sm);
   }
+
   .destinations__buttons-button {
     font-size: 1.9rem;
     line-height: 2.2rem;
   }
+
   .destinations__buttons-button:nth-child(3):after {
     display: none;
   }
+
   .destinations__slider-round-button {
     left: calc(var(--container-width) + 9%);
     width: 2.8rem;

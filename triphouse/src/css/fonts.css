@@ -9,6 +9,7 @@
   unicode-range: U460-52F, U1C 79C 88, U20B 4, U2DE -2DFF, UA640-A69F,
     UFE2E-FE2F;
 }
+
 /* cyrillic */
 @font-face {
   font-family: Roboto;
@@ -19,6 +20,7 @@
     url('../fonts/roboto-regular-cyrillic.woff2') format('woff2');
   unicode-range: U400-45F, U490-491, U4B -4B 1, U2116;
 }
+
 /* latin-ext */
 @font-face {
   font-family: Roboto;
@@ -30,6 +32,7 @@
   unicode-range: U100-24F, U259, U1E -1EFF, U2020, U20A -20AB, U20AD-20CF, U2113,
     U2C 58C 7F, UA720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: Roboto;
@@ -41,6 +44,7 @@
   unicode-range: U0-0FF, U131, U152-153, U2BB-2BC, U2C 6, U2DA, U2DC, U2000-206F,
     U2074, U20AC, U2122, U2191, U2193, U2212, U2215, UFEFF, UFFFD;
 }
+
 /* greek-ext */
 @font-face {
   font-family: 'Roboto';
@@ -51,6 +55,7 @@
     url('../fonts/roboto-regular-greek-ext.woff2') format('woff2');
   unicode-range: U1F -1FFF;
 }
+
 /* greek */
 @font-face {
   font-family: 'Roboto';
@@ -61,6 +66,7 @@
     url('../fonts/roboto-regular-greek.woff2') format('woff2');
   unicode-range: U370-3FF;
 }
+
 /* vietnamese */
 @font-face {
   font-family: 'Roboto';
@@ -72,6 +78,7 @@
   unicode-range: U102-103, U110-111, U128-129, U168-169, U1A -1A 1, U1AF-1B 0,
     U1EA -1EF 9, U20AB;
 }
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
@@ -83,6 +90,7 @@
   unicode-range: U460-52F, U1C 79C 88, U20B 4, U2DE -2DFF, UA640-A69F,
     UFE2E-FE2F;
 }
+
 /* cyrillic */
 @font-face {
   font-family: 'Roboto';
@@ -93,6 +101,7 @@
     url('../fonts/roboto-medium-cyrillic.woff2') format('woff2');
   unicode-range: U301, U400-45F, U490-491, U4B -4B 1, U2116;
 }
+
 /* greek-ext */
 @font-face {
   font-family: 'Roboto';
@@ -103,6 +112,7 @@
     url('../fonts/roboto-medium-greek-ext.woff2') format('woff2');
   unicode-range: U1F -1FFF;
 }
+
 /* greek */
 @font-face {
   font-family: 'Roboto';
@@ -113,6 +123,7 @@
     url('../fonts/roboto-medium-greek.woff2') format('woff2');
   unicode-range: U370-3FF;
 }
+
 /* vietnamese */
 @font-face {
   font-family: 'Roboto';
@@ -124,6 +135,7 @@
   unicode-range: U102-103, U110-111, U128-129, U168-169, U1A -1A 1, U1AF-1B 0,
     U1EA -1EF 9, U20AB;
 }
+
 /* latin-ext */
 @font-face {
   font-family: 'Roboto';
@@ -135,6 +147,7 @@
   unicode-range: U100-24F, U259, U1E -1EFF, U2020, U20A -20AB, U20AD-20CF, U2113,
     U2C 58C 7F, UA720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Roboto';
@@ -146,6 +159,7 @@
   unicode-range: U0-0FF, U131, U152-153, U2BB-2BC, U2C 6, U2DA, U2DC, U2000-206F,
     U2074, U20AC, U2122, U2191, U2193, U2212, U2215, UFEFF, UFFFD;
 }
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Open Sans';
@@ -157,6 +171,7 @@
   unicode-range: U460-52F, U1C 79C 88, U20B 4, U2DE -2DFF, UA640-A69F,
     UFE2E-FE2F;
 }
+
 /* cyrillic */
 @font-face {
   font-family: 'Open Sans';
@@ -167,6 +182,7 @@
   src: url('../fonts/open-sans-medium-cyrillic.woff2') format('woff2');
   unicode-range: U301, U400-45F, U490-491, U4B -4B 1, U2116;
 }
+
 /* greek-ext */
 @font-face {
   font-family: 'Open Sans';
@@ -177,6 +193,7 @@
   src: url('../fonts/open-sans-medium-greek-ext.woff2') format('woff2');
   unicode-range: U1F -1FFF;
 }
+
 /* greek */
 @font-face {
   font-family: 'Open Sans';
@@ -187,6 +204,7 @@
   src: url('../fonts/open-sans-medium-greek.woff2') format('woff2');
   unicode-range: U370-3FF;
 }
+
 /* hebrew */
 @font-face {
   font-family: 'Open Sans';
@@ -197,6 +215,7 @@
   src: url('../fonts/open-sans-medium-hebrew.woff2') format('woff2');
   unicode-range: U590-5FF, U200C-2010, U20AA, U25CC, UFB1D-FB4F;
 }
+
 /* vietnamese */
 @font-face {
   font-family: 'Open Sans';
@@ -208,6 +227,7 @@
   unicode-range: U102-103, U110-111, U128-129, U168-169, U1A -1A 1, U1AF-1B 0,
     U1EA -1EF 9, U20AB;
 }
+
 /* latin-ext */
 @font-face {
   font-family: 'Open Sans';
@@ -219,6 +239,7 @@
   unicode-range: U100-24F, U259, U1E -1EFF, U2020, U20A -20AB, U20AD-20CF, U2113,
     U2C 58C 7F, UA720-A7FF;
 }
+
 /* latin */
 @font-face {
   font-family: 'Open Sans';

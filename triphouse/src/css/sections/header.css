@@ -6,10 +6,12 @@
   align-items: center;
   position: relative;
 }
+
 .header__logo {
   width: 20.5rem;
   color: var(--primary-light);
 }
+
 .header__menu {
   width: 34.4rem;
   font-weight: var(--regular);
@@ -19,6 +21,7 @@
   gap: 2.4rem;
   position: relative;
 }
+
 .header__menu-link {
   height: 3rem;
   max-width: 11.8rem;
@@ -26,6 +29,7 @@
   color: var(--white);
   position: relative;
 }
+
 .header__menu-link:after {
   display: block;
   position: absolute;
@@ -36,54 +40,67 @@
   border-bottom: 0.4rem solid var(--accent-yellow);
   width: 0;
 }
+
 .header__menu-link:hover:after {
   transition: width 200ms linear 300ms;
 }
+
 .header__menu-link:first-child:hover:after {
   width: 5rem;
 }
+
 .header__menu-link:nth-child(2):hover:after {
   width: 10.8rem;
 }
+
 .header__menu-icon {
   position: absolute;
   color: var(--white);
   cursor: pointer;
 }
+
 .header__menu-icon:hover {
   color: var(--accent-yellow);
   transition: color 200ms linear 300ms;
 }
+
 .header__menu-icon_account {
   max-width: 4rem;
   max-height: 4rem;
   left: 56px;
   top: -5px;
 }
+
 .header__menu-icon_night-theme {
   max-width: 3rem;
   max-height: 3.4rem;
   left: 26px;
   top: 0;
 }
+
 .header__menu-icon_menu {
   display: none;
 }
+
 @media screen and (max-width: 1024px) {
   .header__container {
     height: 7rem;
   }
+
   .header__logo {
     width: 14.2rem;
     height: 3.4rem;
   }
+
   .header__menu {
     width: 11.8rem;
     justify-content: flex-end;
   }
+
   .header__menu-link:nth-child(-n + 2) {
     display: none;
   }
+
   .header__menu-icon_account {
     max-width: 3rem;
     max-height: 3rem;
@@ -91,6 +108,7 @@
     left: -8rem;
     top: 0.5rem;
   }
+
   .header__menu-icon_night-theme {
     max-width: 2rem;
     max-height: 2rem;
@@ -98,6 +116,7 @@
     left: -9rem;
     top: 1rem;
   }
+
   .header__menu-icon_menu {
     display: block;
     max-width: 2.8rem;
@@ -106,15 +125,18 @@
     top: 5px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .header__container {
     height: 4rem;
     padding-top: 1.2rem;
   }
+
   .header__logo {
     width: 12.2rem;
     height: 2.4rem;
   }
+
   .header__menu-icon_account {
     max-width: 2.4rem;
     max-height: 2.4rem;
@@ -122,12 +144,14 @@
     left: -65px;
     top: 9px;
   }
+
   .header__menu-icon_night-theme {
     max-width: 1.6rem;
     max-height: 1.6rem;
     left: -72px;
     top: 12px;
   }
+
   .header__menu-icon_menu {
     display: block;
     max-width: 2.4rem;

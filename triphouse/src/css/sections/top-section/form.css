@@ -3,11 +3,13 @@
   padding: 0;
   height: 6.5rem;
 }
+
 .top-section__form-fieldset {
   border: none;
   height: 100%;
   padding: 0;
 }
+
 .top-section__form {
   height: 100%;
   background-color: var(--white);
@@ -16,27 +18,33 @@
   grid-template-columns: 38% 21% 25.1% 16%;
   grid-template-rows: auto;
 }
+
 .top-section__form-icon {
   color: var(--secondary-text);
   display: none;
   position: absolute;
   z-index: 1;
 }
+
 .top-section__form-group {
   display: flex;
   align-items: center;
   position: relative;
 }
+
 .top-section__form-group:nth-child(2) {
   border: 0.3rem solid var(--accent-yellow);
   border-radius: 8px;
 }
+
 .top-section__form-group:nth-child(3) select {
   text-align: left;
 }
+
 .top-section__form-group:nth-child(3) label {
   bottom: 2.2rem;
 }
+
 .top-section__form-item {
   height: 100%;
   width: 100%;
@@ -45,6 +53,7 @@
   border: none;
   border-radius: 8px;
 }
+
 .top-section__form-content {
   height: 100%;
   width: 100%;
@@ -58,17 +67,21 @@
   line-height: 2.1rem;
   color: var(--text-color);
 }
+
 .top-section__form-content_blank {
   width: auto;
   height: auto;
 }
+
 .top-section__form-content_destination {
   padding-left: 2.4rem;
 }
+
 .top-section__form-content_adults,
 .top-section__form-content_rooms {
   padding-left: var(--unit-xs);
 }
+
 .top-section__form-label {
   font-size: 1.8rem;
   font-weight: var(--regular);
@@ -77,51 +90,62 @@
   position: absolute;
   z-index: 1;
 }
+
 .top-section__form-label_destination {
   color: var(--white);
   bottom: 8.3rem;
   left: 2.4rem;
 }
+
 .top-section__form-label_check-in {
   color: var(--white);
   bottom: 8.3rem;
   left: 2rem;
 }
+
 .top-section__form-label_check-in:after {
   content: '—';
   position: absolute;
   right: -1.6rem;
 }
+
 .top-section__form-label_check-out {
   color: var(--white);
   bottom: 8.3rem;
   left: -2.4rem;
 }
+
 .top-section__form-label_adults {
   left: 2.3rem;
 }
+
 .top-section__form-label_adults:after {
   content: '—';
   position: absolute;
   right: -1.8rem;
 }
+
 .top-section__form-label_children {
   left: 1.5rem;
 }
+
 .top-section__form-label_children:after {
   content: '—';
   position: absolute;
   right: -1.8rem;
 }
+
 .top-section__form-label_rooms {
   left: 2.3rem;
 }
+
 .top-section__form-button {
   background-color: var(--primary-light);
   color: var(--white);
   font-size: 2.4rem;
   line-height: 2.8rem;
 }
+
 .top-section__form-button:hover {
   background: linear-gradient(
     to right,
@@ -130,52 +154,66 @@
   );
   transition: background 300ms linear 300ms;
 }
+
 @media screen and (max-width: 1280px) {
   .top-section__form-content {
     font-size: 1.5rem;
   }
+
   .top-section__form-label {
     font-size: 1.5rem;
   }
+
   .top-section__form-label_check-in:after {
     right: -1.3rem;
   }
+
   .top-section__form-label_check-out {
     bottom: 8.3rem;
     left: -1.5rem;
   }
+
   .top-section__form-label_adults {
     left: 2rem;
   }
+
   .top-section__form-label_adults:after {
     right: -1.5rem;
   }
+
   .top-section__form-label_children {
     left: 1.5rem;
   }
+
   .top-section__form-label_children:after {
     right: -1.5rem;
   }
+
   .top-section__form-label_rooms {
     left: 2rem;
   }
+
   .top-section__form-button {
     font-size: 2.2rem;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .top-section__form-container {
     margin-bottom: 3.2rem;
     height: auto;
   }
+
   .top-section__form-fieldset {
     background-color: var(--accent-yellow);
     border: 0.2rem solid var(--accent-yellow);
   }
+
   .top-section__form {
     background-color: var(--accent-yellow);
     grid-template-columns: auto;
   }
+
   .top-section__form-icon {
     width: 1.6rem;
     height: 1.6rem;
@@ -183,41 +221,50 @@
     bottom: 1.8rem;
     left: 1.2rem;
   }
+
   .top-section__form-group {
     color: var(--text-color);
   }
+
   .top-section__form-group:nth-child(2) {
     border: none;
   }
+
   .top-section__form-group:nth-child(2) label {
     left: 1.2rem;
     bottom: 3rem;
   }
+
   .top-section__form-group:nth-child(3) label {
     left: 1.2rem;
     bottom: 3rem;
   }
+
   .top-section__form-item {
     height: 6rem;
     border: 0.4rem solid var(--accent-yellow);
     border-radius: 8px;
   }
+
   .top-section__form-item_adults {
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
+
   .top-section__form-item_children {
     border-left: none;
     border-right: none;
     border-radius: 0;
     padding: 0.4rem 0;
   }
+
   .top-section__form-item_rooms {
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
   .top-section__form-content {
     padding: 0 0 0.6rem 1rem;
     display: flex;
@@ -227,20 +274,24 @@
     line-height: 1.8rem;
     font-weight: var(--medium);
   }
+
   .top-section__form-content_blank {
     display: none;
   }
+
   .top-section__form-content_children {
     border-left: 0.1rem solid var(--secondary-text);
     border-right: 0.1rem solid var(--secondary-text);
     border-radius: 0;
     padding-bottom: 0.2rem;
   }
+
   .top-section__form-label {
     font-size: 1.6rem;
     line-height: 1.5rem;
     color: var(--text-color);
   }
+
   .top-section__form-label_destination {
     font-size: 1.8rem;
     line-height: 1.8rem;
@@ -248,48 +299,59 @@
     bottom: 1.8rem;
     left: 3.7rem;
   }
+
   .top-section__form-label_check-in:after,
   .top-section__form-label_adults:after,
   .top-section__form-label_children:after {
     display: none;
   }
+
   .top-section__form-button {
     font-size: 1.9rem;
     font-weight: var(--medium);
     line-height: 2.2rem;
   }
+
   input::-webkit-input-placeholder {
     color: transparent;
   }
 }
+
 @media screen and (max-width: 768px) {
   .top-section__form-group:nth-child(2) label {
     left: 1rem;
   }
+
   .top-section__form-group:nth-child(3) label {
     bottom: 3.3rem;
   }
+
   .top-section__form-item {
     height: 5.8rem;
   }
+
   .top-section__form-content {
     font-weight: var(--medium);
     font-size: 1.5rem;
     line-height: 1.8rem;
   }
+
   .top-section__form-label {
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
+
   .top-section__form-label_destination {
     font-size: 1.5rem;
     line-height: 1.8rem;
   }
+
   .top-section__form-label_check-in:after,
   .top-section__form-label_adults:after,
   .top-section__form-label_children:after {
     display: none;
   }
+
   .top-section__form-button {
     font-size: 1.9rem;
     line-height: 2.2rem;
