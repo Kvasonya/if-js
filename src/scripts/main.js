@@ -65,13 +65,10 @@ const data = [
   },
 ];
 
-//-----version 1
-
 const hotelsSlider = () => {
   const slider = document.getElementById('js-hotels-slider');
 
   data.slice(0, 4).forEach((item) => {
-    //-----как сделать адаптив?
     const slide = document.createElement('div');
     slide.classList.add('.hotels-preferred__slider-content', 'slider__content');
 
@@ -123,110 +120,3 @@ const hotelsSlider = () => {
 };
 
 hotelsSlider();
-
-//-----or version 2 (через функции-шаблоны)
-//
-// const createContainer = (...className) => {
-//   const container = document.createElement('div');
-//   container.classList.add('container', ...className);
-//   return container;
-// };
-//
-// const createDiv = (...className) => {
-//   const div = document.createElement('div');
-//   div.classList.add(...className);
-//   return div;
-// };
-//
-// const createImg = (src, alt, ...className) => {
-//   const img = document.createElement('img');
-//   img.setAttribute('src', src);
-//   img.setAttribute('alt', alt);
-//   img.classList.add(...className);
-//   return img;
-// };
-//
-// const createLink = (src, text, ...className) => {
-//   const link = document.createElement('a');
-//   link.setAttribute('src', src);
-//   link.innerHTML = text;
-//   link.classList.add(...className);
-//   return link;
-// };
-//
-// const createLinkImg = (src, ...className) => {
-//   const link = document.createElement('a');
-//   link.setAttribute('src', src);
-//   link.classList.add(...className);
-//   return link;
-// };
-//
-// const createEl = (tagName, ...className) => {
-//   const el = document.createElement(tagName);
-//   el.classList.add(...className);
-//   return el;
-// };
-//
-// const createTitle = (range, text, ...className) => {
-//   const title = document.createElement(`h${range}`);
-//   const titleText = document.createTextNode(text);
-//   title.classList.add(...className);
-//   title.prepend(titleText);
-//
-//   return title;
-// };
-//
-// const createText = (content, ...className) => {
-//   const text = document.createElement('p');
-//   const textContent = document.createTextNode(text);
-//   text.classList.add(...className);
-//   text.prepend(textContent);
-//
-//   return text;
-// };
-
-// const hotelsSlider = () => {
-//   const slider = document.getElementById('js-hotels-slider');
-//
-//   data.slice(0, 4).forEach((item) => {
-//     const slide = createDiv(
-//       'hotels-preferred__slider-content',
-//       'slider__content',
-//     );
-//
-//     slider.appendChild(slide);
-//
-//     const linkImg = createLinkImg('#', 'hotels-preferred__slider-content_link');
-//
-//     const img = createImg(
-//       `${item.imageUrl}`,
-//       `${item.name}, ${item.city}, ${item.country}`,
-//       'hotels-preferred__slider-content_img',
-//       'slider__content_img',
-//     );
-//
-//     linkImg.prepend(img);
-//
-//     const hotelName = createLink(
-//       '#',
-//       `${item.name}`,
-//       'hotels-preferred__slider-content_link',
-//       'link',
-//       'slider__content_link',
-//       'slider__content_link-main',
-//     );
-//     const hotelLocation = createLink(
-//       '#',
-//       `${item.city}, ${item.country}`,
-//       'hotels-preferred__slider-content_link',
-//       'link',
-//       'slider__content_link',
-//       'slider__content_link-secondary',
-//     );
-//
-//     slide.prepend(linkImg, hotelName, hotelLocation);
-//     slider.appendChild(slide);
-//   });
-// };
-//
-// hotelsSlider();

@@ -47,7 +47,7 @@ select {
 }
 
 ._bg-img {
-  background-image: url('.././img/castelmezzano.png');
+  background-image: url('../imgastelmezzano.png');
   background-size: cover;
   min-height: 100vh;
   order: 1;

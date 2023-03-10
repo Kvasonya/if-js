@@ -6,17 +6,44 @@
       name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0"
     />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Javacript</title>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <title>Triphouse</title>
   </head>
   <body>
-    <h1>Hello, Javascript</h1>
-    <p id="text1" class="text_no-active">Text 1</p>
-    <p id="text2" class="text_no-active">Text 2</p>
-    <p id="text3" class="text_no-active">Text 3</p>
-    <script type="module" src="./src/entities/User.js"></script>
-    <script type="module" src="./src/entities/Student.js"></script>
-    <script type="module" src="./src/entities/Students.js"></script>
-    <script src="./main.js"></script>
+    <main class="triphouse">
+      <section
+        id="js-hotels"
+        class="hotels-preferred _bg-main col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-6"
+      >
+        <div class="container">
+          <h2 class="hotels-preferred__title title">Homes guests loves</h2>
+          <div class="hotels-preferred__container">
+            <button
+              class="slider__round-button button hotels-preferred__slider-round-button hotels-preferred__slider-round-button-next"
+              type="button"
+            >
+              <span class="slider__round-button-arrow arrow-figure">
+                <i class="arrow-figure__top arrow-figure__line"></i>
+                <i class="arrow-figure__bottom arrow-figure__line"></i>
+              </span>
+            </button>
+            <button
+              class="slider__round-button button hotels-preferred__slider-round-button hotels-preferred__slider-round-button-prev"
+              type="button"
+            >
+              <span class="slider__round-button-arrow arrow-figure">
+                <i class="arrow-figure__top arrow-figure__line"></i>
+                <i class="arrow-figure__bottom arrow-figure__line"></i>
+              </span>
+            </button>
+            <div
+              id="js-hotels-slider"
+              class="hotels-preferred__slider slider"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="src/scripts/main.js"></script>
   </body>
 </html>
