@@ -32,10 +32,10 @@
   position: relative;
 }
 
-.top-section__form-group:nth-child(2) {
-  border: 0.3rem solid var(--accent-yellow);
-  border-radius: 8px;
-}
+/*.top-section__form-group:nth-child(2) {*/
+/*  border: 0.3rem solid var(--accent-yellow);*/
+/*  border-radius: 8px;*/
+/*}*/
 
 .top-section__form-group:nth-child(3) select {
   text-align: left;

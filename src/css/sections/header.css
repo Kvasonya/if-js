@@ -22,15 +22,16 @@
   position: relative;
 }
 
-.header__menu-link {
+.header__menu-item {
   height: 3rem;
   max-width: 11.8rem;
   padding-top: 0.2rem;
   color: var(--white);
   position: relative;
+  cursor: pointer;
 }
 
-.header__menu-link:after {
+.header__menu-item:after {
   display: block;
   position: absolute;
   content: '';
@@ -41,15 +42,15 @@
   width: 0;
 }
 
-.header__menu-link:hover:after {
+.header__menu-item:hover:after {
   transition: width 200ms linear 300ms;
 }
 
-.header__menu-link:first-child:hover:after {
+.header__menu-item:first-child:hover:after {
   width: 5rem;
 }
 
-.header__menu-link:nth-child(2):hover:after {
+.header__menu-item:nth-child(2):hover:after {
   width: 10.8rem;
 }
 

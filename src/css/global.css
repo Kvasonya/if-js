@@ -16,6 +16,16 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
 button {
   font-family: Roboto, sans-serif;
   border: none;
@@ -47,15 +57,10 @@ select {
 }
 
 ._bg-img {
-  background-image: url('../imgastelmezzano.png');
+  background-image: url('../img/castelmezzano.png');
   background-size: cover;
   min-height: 100vh;
   order: 1;
-}
-
-.link {
-  outline: none;
-  text-decoration: none;
 }
 
 .svg-sprite {
