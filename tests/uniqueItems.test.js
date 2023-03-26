@@ -1,4 +1,10 @@
-import { uniqueItems, uniqueObjByOneKey } from '../src/scripts/uniqueItems.js';
+import {
+  uniqueItems,
+  uniqueObjByOneKey,
+  uniqueValuesArr,
+  getNewSet,
+  arrValuesInSet,
+} from '../src/scripts/uniqueItems.js';
 
 test('find unique elements in array', () => {
   const data = [
@@ -10,7 +16,12 @@ test('find unique elements in array', () => {
     'un cheval',
     'un oiseau',
   ];
-  expect(uniqueItems(data)).toStrictEqual([
+
+  const setData = new Set(data);
+
+  expect(
+    uniqueItems(data) && uniqueValuesArr(data) && arrValuesInSet(setData),
+  ).toStrictEqual([
     'un chat',
     'un chien',
     'un oiseau',
@@ -28,5 +39,17 @@ test('find unique objects in array', () => {
   expect(uniqueObjByOneKey(data, 'lastname')).toStrictEqual([
     { firstname: 'Bella', lastname: 'Goth' },
     { firstname: 'Don', lastname: 'Lotario' },
+  ]);
+});
+
+test('get new Set by key', () => {
+  const data = [
+    { firstname: 'Bella', lastname: 'Goth' },
+    { firstname: 'Don', lastname: 'Lotario' },
+    { firstname: 'Mortimer', lastname: 'Goth' },
+  ];
+  expect(Array.from(getNewSet(data, 'lastname'))).toStrictEqual([
+    'Goth',
+    'Lotario',
   ]);
 });

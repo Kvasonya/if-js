@@ -1,4 +1,7 @@
-import { getCitiesInCountries } from '../src/scripts/getCitiesInCountries.js';
+import {
+  getCitiesInCountries,
+  setCitiesInCountries,
+} from '../src/scripts/getCitiesInCountries.js';
 
 test('create a list of unique countries and cities in those countries', () => {
   const data = [
@@ -23,7 +26,9 @@ test('create a list of unique countries and cities in those countries', () => {
       country: 'UK',
     },
   ];
-  expect(getCitiesInCountries(data)).toStrictEqual({
+  expect(
+    getCitiesInCountries(data) && setCitiesInCountries(data),
+  ).toStrictEqual({
     UK: ['Edinburgh'],
     Spain: ['Santa Cruz de Tenerife', 'Ibiza'],
   });
