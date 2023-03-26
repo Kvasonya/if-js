@@ -1,0 +1,26 @@
+.top-section__markets {
+  display: flex;
+  justify-content: center;
+  gap: var(--unit-sm);
+  padding-bottom: var(--delimiter-section);
+}
+
+.markets__item-icon {
+  cursor: pointer;
+}
+
+.markets__item-icon_google-play {
+  width: 13.5rem;
+  max-height: 4rem;
+}
+
+.markets__item-icon_app-store {
+  width: 11.7rem;
+  aspect-ratio: 3;
+}
+
+@media screen and (max-width: 768px) {
+  .top-section__markets {
+    padding-bottom: var(--delimiter-section);
+  }
+}

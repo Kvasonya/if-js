@@ -1,0 +1,136 @@
+.footer {
+  order: 7;
+}
+
+.footer__logo-container {
+  display: none;
+}
+
+.footer__logo {
+  color: var(--white);
+}
+
+.footer__content-container {
+  padding: var(--delimiter-section) var(--delimiter-section) 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__content {
+  font-size: 2rem;
+  font-weight: var(--regular);
+  line-height: 2.3rem;
+  color: var(--white);
+}
+
+.footer__content-title {
+  font-weight: var(--medium);
+  padding: 0;
+}
+
+.footer__content-list {
+  list-style: none;
+  margin-top: 2.4rem;
+  padding: 0;
+  font-weight: var(--regular);
+  flex-wrap: wrap;
+}
+
+.footer__content-link {
+  color: var(--white);
+}
+
+.footer__copy {
+  margin-top: 6.4rem;
+  font-weight: var(--regular);
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  padding: 0 0 var(--delimiter-section) 0;
+  color: var(--white);
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1280px) {
+  .footer__content {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer__content-container {
+    padding: 0;
+  }
+
+  .footer__logo-container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer__logo {
+    max-width: 9.8rem;
+    max-height: 1.9rem;
+  }
+
+  .footer__content-title {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: center;
+    text-decoration-line: underline;
+  }
+
+  .footer__content-list {
+    display: none;
+  }
+
+  .footer__copy {
+    text-align: center;
+    padding-bottom: 4rem;
+    margin-top: 3.2rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__content-container {
+    justify-content: center;
+    gap: 1.6rem;
+  }
+
+  .footer__logo-container {
+    padding-top: var(--delimiter-section);
+    padding-bottom: var(--delimiter-section);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer__logo {
+    max-width: 9.8rem;
+    max-height: 1.9rem;
+  }
+
+  .footer__content-title {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: center;
+    text-decoration-line: underline;
+  }
+
+  .footer__content-list {
+    display: none;
+  }
+
+  .footer__copy {
+    text-align: center;
+    padding-bottom: var(--delimiter-section);
+    margin-top: 3.2rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
