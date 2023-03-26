@@ -13,6 +13,7 @@
 @import 'sections/top-section/form.css';
 @import 'sections/top-section/slogan.css';
 @import 'sections/top-section/markets.css';
+@import 'sections/top-section/form-filter.css';
 
 /*Features*/
 @import 'sections/features.css';

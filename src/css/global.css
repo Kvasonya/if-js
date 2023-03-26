@@ -54,13 +54,13 @@ select {
   -moz-appearance: none;
   appearance: none;
   text-align: center;
+  border: none;
+  outline: 0;
 }
 
-._bg-img {
-  background-image: url('../img/castelmezzano.png');
-  background-size: cover;
-  min-height: 100vh;
-  order: 1;
+input {
+  border: none;
+  outline: 0;
 }
 
 .svg-sprite {
@@ -85,6 +85,13 @@ select {
   position: relative;
 }
 
+._bg-img {
+  background-image: url('../img/castelmezzano.png');
+  background-size: cover;
+  min-height: 100vh;
+  order: 1;
+}
+
 ._bg-main {
   width: 100%;
   background-color: var(--bg-main);
@@ -93,6 +100,14 @@ select {
 ._bg-dark {
   width: 100%;
   background-color: var(--primary-dark);
+}
+
+._visible {
+  display: block;
+}
+
+._hidden {
+  display: none;
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1280px) {

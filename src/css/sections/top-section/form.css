@@ -2,6 +2,7 @@
   margin-bottom: var(--delimiter-section);
   padding: 0;
   height: 6.5rem;
+  position: relative;
 }
 
 .top-section__form-fieldset {
@@ -32,17 +33,28 @@
   position: relative;
 }
 
-/*.top-section__form-group:nth-child(2) {*/
+.top-section__form-group .top-section__form-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*.top-section__form-group:focus {*/
 /*  border: 0.3rem solid var(--accent-yellow);*/
 /*  border-radius: 8px;*/
 /*}*/
+
+.top-section__form-group_active {
+  border: 0.3rem solid var(--accent-yellow);
+  border-radius: 8px;
+}
 
 .top-section__form-group:nth-child(3) select {
   text-align: left;
 }
 
 .top-section__form-group:nth-child(3) label {
-  bottom: 2.2rem;
+  /*bottom: 2.2rem;*/
 }
 
 .top-section__form-item {
@@ -77,10 +89,10 @@
   padding-left: 2.4rem;
 }
 
-.top-section__form-content_adults,
-.top-section__form-content_rooms {
-  padding-left: var(--unit-xs);
-}
+/*.top-section__form-content_adults,*/
+/*.top-section__form-content_rooms {*/
+/*  padding-left: var(--unit-xs);*/
+/*}*/
 
 .top-section__form-label {
   font-size: 1.8rem;
@@ -115,25 +127,33 @@
   left: -2.4rem;
 }
 
+.top-section__form-item-group_guests label {
+  position: static;
+}
+
+.top-section__form-item-group_guests input {
+  width: 25%;
+}
+
 .top-section__form-label_adults {
   left: 2.3rem;
 }
 
-.top-section__form-label_adults:after {
-  content: '—';
-  position: absolute;
-  right: -1.8rem;
-}
+/*.top-section__form-label_adults:after {*/
+/*  content: '—';*/
+/*  position: absolute;*/
+/*  right: -1.8rem;*/
+/*}*/
 
 .top-section__form-label_children {
   left: 1.5rem;
 }
 
-.top-section__form-label_children:after {
-  content: '—';
-  position: absolute;
-  right: -1.8rem;
-}
+/*.top-section__form-label_children:after {*/
+/*  content: '—';*/
+/*  position: absolute;*/
+/*  right: -1.8rem;*/
+/*}*/
 
 .top-section__form-label_rooms {
   left: 2.3rem;

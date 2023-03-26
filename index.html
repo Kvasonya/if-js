@@ -306,9 +306,6 @@
                       name="check-in"
                     >
                       <option disabled="" selected="">Tue 15 Sept</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
                     </select>
                   </div>
                   <p
@@ -331,28 +328,23 @@
                       name="check-out"
                     >
                       <option disabled="" selected="">Sat 19 Sept</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
                     </select>
                   </div>
                 </div>
                 <div
+                  id="js-guests-in-form"
                   class="top-section__form-group top-section__form-item-group_guests"
                 >
                   <div
                     class="top-section__form-item top-section__form-item_adults"
                   >
-                    <select
+                    <input
                       class="top-section__form-content top-section__form-content_adults"
                       id="adults"
                       name="adults"
-                    >
-                      <option disabled="" selected="">2</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
+                      placeholder="1"
+                    />
+
                     <label
                       class="top-section__form-label top-section__form-label_adults"
                       for="adults"
@@ -360,19 +352,20 @@
                       Adults
                     </label>
                   </div>
+                  <p
+                    class="top-section__form-content top-section__form-content_blank"
+                  >
+                    &mdash;
+                  </p>
                   <div
                     class="top-section__form-item top-section__form-item_children"
                   >
-                    <select
+                    <input
                       class="top-section__form-content top-section__form-content_children"
                       id="children"
                       name="children"
-                    >
-                      <option disabled="" selected="">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
+                      placeholder="0"
+                    />
                     <label
                       class="top-section__form-label top-section__form-label_children"
                       for="children"
@@ -380,19 +373,20 @@
                       Children
                     </label>
                   </div>
+                  <p
+                    class="top-section__form-content top-section__form-content_blank"
+                  >
+                    &mdash;
+                  </p>
                   <div
                     class="top-section__form-item top-section__form-item_rooms"
                   >
-                    <select
+                    <input
                       class="top-section__form-content top-section__form-content_rooms"
                       id="rooms"
                       name="rooms"
-                    >
-                      <option disabled="" selected="">1</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
+                      placeholder="1"
+                    />
                     <label
                       class="top-section__form-label top-section__form-label_rooms"
                       for="rooms"
@@ -410,6 +404,105 @@
                 </div>
               </form>
             </fieldset>
+            <div class="_hidden">
+              <div id="js-guests-filter" class="filter">
+                <div class="filter__main">
+                  <div class="filter__main-group">
+                    <label for="js-adults-filter" class="filter__label"
+                      >Adults</label
+                    >
+                    <div class="filter__counter filter__counter_adults">
+                      <button
+                        id="js-btn-adults-mns"
+                        class="filter__button_minus filter__button_unavailable"
+                        value="-"
+                      >
+                        –
+                      </button>
+                      <input
+                        id="js-adults-filter"
+                        class="filter__counter_value"
+                        value="1"
+                        placeholder="1"
+                        min="1"
+                        max="50"
+                      />
+                      <button
+                        id="js-btn-adults-pls"
+                        class="plus filter__button_plus filter__button_available"
+                        value="+"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div class="filter__main-group">
+                    <label for="js-child-filter" class="filter__label"
+                      >Children</label
+                    >
+                    <div class="filter__counter filter__counter_children">
+                      <button
+                        id="js-btn-child-mns"
+                        class="filter__button_minus filter__button_unavailable"
+                        value="-"
+                      >
+                        –
+                      </button>
+                      <input
+                        id="js-child-filter"
+                        class="filter__counter_value"
+                        value="0"
+                        placeholder="0"
+                        min="0"
+                        max="10"
+                      />
+                      <button
+                        id="js-btn-child-pls"
+                        class="filter__button_plus filter__button_available"
+                        value="+"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                  <div class="filter__main-group">
+                    <label for="js-rooms-filter" class="filter__label"
+                      >Rooms</label
+                    >
+                    <div class="filter__counter filter__counter_rooms">
+                      <button
+                        id="js-btn-rooms-mns"
+                        class="filter__button_minus filter__button_unavailable"
+                        value="-"
+                      >
+                        –
+                      </button>
+                      <input
+                        id="js-rooms-filter"
+                        class="filter__counter_value"
+                        value="1"
+                      />
+                      <button
+                        id="js-btn-rooms-pls"
+                        class="filter__button_plus filter__button_available"
+                        value="+"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="_hidden">
+                  <div id="js-filter-children" class="filter__children">
+                    <label class="filter__children_label"
+                      >What is the age of the child you’re travelling with?
+                    </label>
+                    <div class="filter__children-container"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="top-section__markets markets container">
             <div class="markets__item">

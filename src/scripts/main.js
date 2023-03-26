@@ -1,3 +1,4 @@
+//-----Guests homes loves
 const data = [
   {
     id: '71ce9eac-e9b9-44f0-a342-9ff0b565f3b7',
@@ -120,3 +121,169 @@ const hotelsSlider = () => {
 };
 
 hotelsSlider();
+
+//------Top-section Search-form
+
+const searchGroup = document.querySelectorAll(
+  '.top-section__form-group:nth-child(-n+3)',
+);
+
+for (const group of searchGroup) {
+  group.addEventListener('click', function () {
+    group.classList.toggle('top-section__form-group_active');
+  });
+} //-----как убрать? и почему "прыгает"
+
+const guests = document.getElementById('js-guests-in-form');
+const guestsFilter = document.getElementById('js-guests-filter');
+
+const showFilter = () => {
+  guestsFilter.parentElement.classList.remove('_hidden');
+};
+
+guests.addEventListener('click', showFilter);
+
+class Counter {
+  constructor({ inpFilterID, inpFormID, btnMnsID, btnPlsID, minVal, maxVal }) {
+    this.inputFilter = document.getElementById(inpFilterID);
+    this.inputInForm = document.getElementById(inpFormID);
+    this.btnMns = document.getElementById(btnMnsID);
+    this.btnPls = document.getElementById(btnPlsID);
+    this.minVal = minVal;
+    this.maxVal = maxVal;
+  }
+
+  startCount() {
+    const inputInForm = this.inputInForm;
+    const inputFilter = this.inputFilter;
+    const minus = this.btnMns;
+    const plus = this.btnPls;
+    const min = this.minVal;
+    const max = this.maxVal;
+
+    const btnUnavailable = (btn) => {
+      btn.setAttribute('disable', '');
+      btn.classList.remove('filter__button_available');
+      btn.classList.add('filter__button_unavailable');
+    };
+
+    const btnAvailable = (btn) => {
+      btn.removeAttribute('disable');
+      btn.classList.remove('filter__button_unavailable');
+      btn.classList.add('filter__button_available');
+    };
+
+    minus.addEventListener('click', () => {
+      inputFilter.value--;
+      inputFilter.setAttribute('value', inputFilter.value);
+
+      if (inputFilter.value > min) {
+        btnAvailable(plus);
+      } else {
+        inputFilter.value = min;
+        inputFilter.setAttribute('value', min);
+        btnUnavailable(minus);
+      }
+    });
+
+    plus.addEventListener('click', () => {
+      inputFilter.value++;
+      inputFilter.setAttribute('value', inputFilter.value);
+
+      if (inputFilter.value < max) {
+        // inputFilter.setAttribute('value', inputFilter.value);
+        btnAvailable(plus);
+        btnAvailable(minus);
+      } else {
+        inputFilter.value = max;
+
+        inputFilter.setAttribute('value', max);
+        btnUnavailable(plus);
+        btnAvailable(minus);
+      }
+    });
+
+    inputInForm.value = inputFilter.value; //-----почему не работает? на каком-то этапе работало :\
+  }
+}
+
+const adultsTotal = new Counter({
+  inpFilterID: 'js-adults-filter',
+  inpFormID: 'adults',
+  btnMnsID: 'js-btn-adults-mns',
+  btnPlsID: 'js-btn-adults-pls',
+  minVal: 1,
+  maxVal: 30,
+});
+const childTotal = new Counter({
+  inpFilterID: 'js-child-filter',
+  inpFormID: 'children',
+  btnMnsID: 'js-btn-child-mns',
+  btnPlsID: 'js-btn-child-pls',
+  minVal: 0,
+  maxVal: 10,
+});
+const roomsTotal = new Counter({
+  inpFilterID: 'js-rooms-filter',
+  inpFormID: 'rooms',
+  btnMnsID: 'js-btn-rooms-mns',
+  btnPlsID: 'js-btn-rooms-pls',
+  minVal: 1,
+  maxVal: 30,
+});
+
+adultsTotal.startCount();
+childTotal.startCount();
+roomsTotal.startCount();
+
+const createChildAge = () => {
+  const inputFilter = document.getElementById('js-child-filter');
+  const minus = document.getElementById('js-btn-child-mns');
+  const plus = document.getElementById('js-btn-child-pls');
+
+  const mainCont = document.querySelector('.filter__children');
+  const childCont = document.querySelector('.filter__children-container');
+
+  plus.addEventListener('click', () => {
+    mainCont.parentElement.classList.remove('_hidden');
+
+    const childValue = Number(inputFilter.getAttribute('value'));
+
+    childCont.innerHTML = '';
+    for (let i = 1; i <= childValue; i += 1) {
+      childCont.appendChild(
+        Object.assign(document.createElement('select'), {
+          innerHTML: `<option>0 years old</option>
+<option>1 years old</option>
+<option>2 years old</option>
+<option>3 years old</option>
+<option>4 years old</option>
+<option>5 years old</option>
+<option>6 years old</option>
+<option>7 years old</option>
+<option>8 years old</option>
+<option>9 years old</option>
+<option>10 years old</option>
+<option>11 years old</option>
+<option>12 years old</option>
+<option>13 years old</option>
+<option>14 years old</option>
+<option>15 years old</option>
+<option>16 years old</option>
+<option>17 years old</option>`,
+          id: `child-${i}-age`,
+          className: 'filter__children_select-age',
+        }),
+      );
+    }
+  });
+
+  minus.addEventListener('click', () => {
+    const childValue = Number(inputFilter.getAttribute('value'));
+    childValue !== 0
+      ? childCont.lastChild.remove()
+      : mainCont.parentElement.classList.add('_hidden');
+  });
+};
+
+createChildAge();
