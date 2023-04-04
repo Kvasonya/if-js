@@ -360,9 +360,7 @@
 }
 
 @media screen and (max-width: 768px) {
-
   main {
-
   }
   .top-section__form-group:nth-child(2) label {
     left: 1rem;
