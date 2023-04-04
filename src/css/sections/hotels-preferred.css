@@ -23,7 +23,7 @@
 }
 
 .hotels-preferred__slider-round-button-prev {
-  transform: translate(-50%, 0) rotate(180deg);
+  transform: translate(-50%, -50%) rotate(180deg);
   left: 0;
   box-shadow: -1px -2px 3px 0 var(--secondary-text);
 }
@@ -31,7 +31,7 @@
 .hotels-preferred__slider-round-button-next {
   overflow: visible;
   left: calc(var(--container-width) - (var(--unit-sm)) * 2);
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 1280px) {

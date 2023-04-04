@@ -78,6 +78,9 @@
   font-size: 1.8rem;
   line-height: 2.1rem;
   color: var(--text-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .top-section__form-content_blank {
@@ -127,11 +130,11 @@
   left: -2.4rem;
 }
 
-.top-section__form-item-group_guests label {
+.top-section__form-group_guests label {
   position: static;
 }
 
-.top-section__form-item-group_guests input {
+.top-section__form-group_guests input {
   width: 25%;
 }
 
@@ -246,6 +249,22 @@
     color: var(--text-color);
   }
 
+  .top-section__form-group .top-section__form-item {
+    display: block;
+  }
+
+  .top-section__form-group label {
+    position: absolute;
+  }
+
+  .top-section__form-group_guests input {
+    width: 100%;
+    padding-top: 24px;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: var(--medium);
+  }
+
   .top-section__form-group:nth-child(2) {
     border: none;
   }
@@ -299,6 +318,10 @@
     display: none;
   }
 
+  .top-section__form-content_destination {
+    padding-left: 3.7rem;
+  }
+
   .top-section__form-content_children {
     border-left: 0.1rem solid var(--secondary-text);
     border-right: 0.1rem solid var(--secondary-text);
@@ -313,11 +336,7 @@
   }
 
   .top-section__form-label_destination {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
-    font-weight: var(--medium);
-    bottom: 1.8rem;
-    left: 3.7rem;
+    display: none;
   }
 
   .top-section__form-label_check-in:after,
@@ -332,18 +351,25 @@
     line-height: 2.2rem;
   }
 
-  input::-webkit-input-placeholder {
-    color: transparent;
+  .top-section__form-content_destination::-webkit-input-placeholder {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: var(--medium);
+    bottom: 1.8rem;
   }
 }
 
 @media screen and (max-width: 768px) {
+
+  main {
+
+  }
   .top-section__form-group:nth-child(2) label {
     left: 1rem;
   }
 
   .top-section__form-group:nth-child(3) label {
-    bottom: 3.3rem;
+    bottom: 3rem;
   }
 
   .top-section__form-item {
@@ -370,6 +396,11 @@
   .top-section__form-label_adults:after,
   .top-section__form-label_children:after {
     display: none;
+  }
+
+  .top-section__form-content_destination::-webkit-input-placeholder {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
   }
 
   .top-section__form-button {

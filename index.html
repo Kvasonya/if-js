@@ -7,6 +7,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0"
     />
     <link rel="stylesheet" href="src/css/styles.css" />
+    <link rel="icon" href="favicon.ico" />
     <title>Triphouse</title>
   </head>
   <body>
@@ -233,10 +234,13 @@
           <svg class="header__logo logo">
             <use href="#logo"></use>
           </svg>
-          <!--                <svg class="header__menu-icon header__menu-icon_menu">-->
-          <!--                  <use href="#menu"></use>-->
-          <!--                </svg>-->
+<!--                          <svg class="header__menu-icon header__menu-icon_menu">-->
+<!--                            <use href="#menu"></use>-->
+<!--                          </svg>-->
           <nav class="header__menu-container">
+<!--            <button class="header__burger burger">-->
+<!--              <span class="burger__line"></span>-->
+<!--            </button>-->
             <ul class="header__menu">
               <li class="header__menu-item">Stays</li>
               <li class="header__menu-item">Attractions</li>
@@ -333,7 +337,7 @@
                 </div>
                 <div
                   id="js-guests-in-form"
-                  class="top-section__form-group top-section__form-item-group_guests"
+                  class="top-section__form-group top-section__form-group_guests"
                 >
                   <div
                     class="top-section__form-item top-section__form-item_adults"
@@ -343,6 +347,8 @@
                       id="adults"
                       name="adults"
                       placeholder="1"
+                      min="1"
+                      max="30"
                     />
 
                     <label
@@ -365,6 +371,8 @@
                       id="children"
                       name="children"
                       placeholder="0"
+                      min="0"
+                      max="10"
                     />
                     <label
                       class="top-section__form-label top-section__form-label_children"
@@ -386,6 +394,9 @@
                       id="rooms"
                       name="rooms"
                       placeholder="1"
+                      value="1"
+                      min="1"
+                      max="30"
                     />
                     <label
                       class="top-section__form-label top-section__form-label_rooms"
@@ -425,7 +436,7 @@
                         value="1"
                         placeholder="1"
                         min="1"
-                        max="50"
+                        max="30"
                       />
                       <button
                         id="js-btn-adults-pls"
@@ -492,7 +503,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="_hidden">
                   <div id="js-filter-children" class="filter__children">
                     <label class="filter__children_label"
@@ -523,6 +533,47 @@
         </section>
       </div>
       <section
+        class="features container features__container col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-6"
+      >
+        <h2 class="features__title title">What do we offer</h2>
+        <div class="features__content">
+          <div
+            class="features__content-item col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6"
+          >
+            <svg class="features__content-icon features__content-icon_support">
+              <use href="#support"></use>
+            </svg>
+            <p class="features__content-text">Support 24/7</p>
+          </div>
+          <div
+            class="features__content-item col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6"
+          >
+            <svg
+              class="features__content-icon features__content-icon_communicate"
+            >
+              <use href="#communicate"></use>
+            </svg>
+            <p class="features__content-text">Communicate directly</p>
+          </div>
+          <div
+            class="features__content-item col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6"
+          >
+            <svg class="features__content-icon features__content-icon_book">
+              <use href="#book"></use>
+            </svg>
+            <p class="features__content-text">Book online</p>
+          </div>
+          <div
+            class="features__content-item col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6"
+          >
+            <svg class="features__content-icon features__content-icon_reviews">
+              <use href="#reviews"></use>
+            </svg>
+            <p class="features__content-text">Real guest reviews</p>
+          </div>
+        </div>
+      </section>
+      <section
         id="js-hotels"
         class="hotels-preferred _bg-main col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-6"
       >
@@ -539,7 +590,7 @@
               </span>
             </button>
             <button
-              class="slider__round-button button hotels-preferred__slider-round-button hotels-preferred__slider-round-button-prev"
+              class="slider__round-button button hotels-preferred__slider-round-button hotels-preferred__slider-round-button-prev _hidden"
               type="button"
             >
               <span class="slider__round-button-arrow arrow-figure">
@@ -554,7 +605,308 @@
           </div>
         </div>
       </section>
+      <section class="destinations">
+        <div
+          class="destinations__container container col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-6"
+        >
+          <h2 class="destinations__title title">The best destinations</h2>
+          <div class="destinations__buttons">
+            <button class="destinations__buttons-button button" type="button">
+              Regions
+            </button>
+            <button class="destinations__buttons-button button" type="button">
+              Cities
+            </button>
+            <button class="destinations__buttons-button button" type="button">
+              Places
+            </button>
+          </div>
+          <div class="slider destinations__slider">
+            <div
+              class="destinations__slider-content slider__content destinations__slider-content_item-1 slider__content_item-1"
+            >
+              <div
+                class="destinations__slider-content-mask slider-content-mask"
+              >
+                <img
+                  class="destinations__slider-content_img slider__content_img"
+                  src="./src/img/destinations/maldives.png"
+                  alt="Maldives"
+                />
+                <span
+                  class="destinations__slider-mask_shadow slider-content-mask_shadow"
+                >
+                  <button
+                    class="destinations__slider-booking-button button__main button"
+                    type="button"
+                  >
+                    Book now
+                  </button>
+                </span>
+              </div>
+              <a
+                class="destinations__slider-content-link slider__content_link slider__content_link-main link"
+                href="#"
+                >Maldives</a
+              >
+            </div>
+            <div
+              class="destinations__slider-content slider__content destinations__slider-content_item-2 slider__content_item-2"
+            >
+              <div
+                class="destinations__slider-content-mask slider-content-mask"
+              >
+                <img
+                  class="destinations__slider-content_img slider__content_img"
+                  src="./src/img/destinations/spain.png"
+                  alt="Spain"
+                />
+                <span
+                  class="destinations__slider-mask_shadow slider-content-mask_shadow"
+                >
+                  <button
+                    class="destinations__slider-booking-button button__main button"
+                    type="button"
+                  >
+                    Book now
+                  </button>
+                </span>
+              </div>
+              <a
+                class="destinations__slider-content-link slider__content_link slider__content_link-main link"
+                href="#"
+                >Spain</a
+              >
+            </div>
+            <div
+              class="destinations__slider-content slider__content destinations__slider-content_item-3 slider__content_item-3"
+            >
+              <div
+                class="destinations__slider-content-mask slider-content-mask"
+              >
+                <img
+                  class="destinations__slider-content_img slider__content_img"
+                  src="./src/img/destinations/norway.png"
+                  alt="Norway"
+                />
+                <span
+                  class="destinations__slider-mask_shadow slider-content-mask_shadow"
+                >
+                  <button
+                    class="destinations__slider-booking-button button__main button"
+                    type="button"
+                  >
+                    Book now
+                  </button>
+                </span>
+              </div>
+              <a
+                class="destinations__slider-content-link slider__content_link slider__content_link-main link"
+                href="#"
+                >Norway</a
+              >
+            </div>
+            <div
+              class="destinations__slider-content slider__content destinations__slider-content-item_4 slider__content_item-4"
+            >
+              <div
+                class="destinations__slider-content-mask slider-content-mask"
+              >
+                <img
+                  class="destinations__slider-content_img slider__content_img"
+                  src="./src/img/destinations/island.png"
+                  alt="Island"
+                />
+                <span
+                  class="destinations__slider-mask_shadow slider-content-mask_shadow"
+                >
+                  <button
+                    class="destinations__slider-booking-button button__main button"
+                    type="button"
+                  >
+                    Book now
+                  </button>
+                </span>
+              </div>
+              <a
+                class="destinations__slider-content-link slider__content_link slider__content_link-main link"
+                href="#"
+                >Island</a
+              >
+            </div>
+            <button
+              class="slider__round-button button destinations__slider-round-button"
+              type="button"
+            >
+              <span class="slider__round-button-arrow arrow-figure">
+                <i class="arrow-figure__top arrow-figure__line"></i>
+                <i class="arrow-figure__bottom arrow-figure__line"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="sign-up">
+        <div class="container col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-6">
+          <div class="sign-up__container">
+            <figure class="sign-up__logo-box">
+              <svg class="sign-up__logo-box-icon">
+                <use href="#logo"></use>
+              </svg>
+            </figure>
+            <figure class="sign-up__round-figure">
+              <svg
+                class="sign-up__round-figure-icon sign-up__round-figure-icon_user"
+              >
+                <use href="#user"></use>
+              </svg>
+              <svg
+                class="sign-up__round-figure-icon sign-up__round-figure-icon_plus"
+              >
+                <use href="#user-plus"></use>
+              </svg>
+            </figure>
+            <p class="sign-up__text sign-up__text-desktop">
+              Sign up and get 20% off your first booking
+            </p>
+            <p class="sign-up__text sign-up__text-mobile">
+              Sign up in the app and get 20%<br />off your first booking
+            </p>
+            <a class="sign-up__link link" href="#">Install</a>
+            <button class="sign-up__button button__main button" type="button">
+              Sign up
+            </button>
+            <div class="sign-up__close close"></div>
+          </div>
+        </div>
+      </section>
+<!--      <section class="reviews col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-6">-->
+<!--        <div class="container">-->
+<!--          <h2 class="reviews__title title">Guests reviews</h2>-->
+<!--        </div>-->
+<!--        <div class="container">-->
+<!--          <div class="reviews__container">-->
+<!--            <button class="slider__round-button button reviews__slider-round-button reviews__slider-round-button-next swiper-button-next" type="button">-->
+<!--              <div class="slider__round-button-arrow arrow-figure"><i class="arrow-figure__top arrow-figure__line"></i><i class="arrow-figure__bottom arrow-figure__line"></i></div>-->
+<!--            </button>-->
+<!--            <button class="slider__round-button button reviews__slider-round-button reviews__slider-round-button-prev swiper-button-prev" type="button">-->
+<!--              <div class="slider__round-button-arrow arrow-figure"><i class="arrow-figure__top arrow-figure__line"></i><i class="arrow-figure__bottom arrow-figure__line"></i></div>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--          <div class="swiper reviewSwiper reviews__slider">-->
+<!--            <div class="swiper-wrapper">-->
+<!--              <div class="swiper-slide reviews-swiper-slide">-->
+<!--                <div class="reviews__slider-content"><a class="reviews__slider-content_link" href="#"><img class="reviews__slider-content_img slider__content_img" alt="Ubud Bali Resort&amp;amp;SPA, Bali, Indonesia"/></a><span class="reviews__slider-content_price">250 USD</span>-->
+<!--                  <div class="rev1">-->
+<!--                    <div class="reviews__slider-content_hotel-info reviews__hotel-info">-->
+<!--                      <div class="reviews__hotel-info-location"><a class="reviews__hotel-info-location_name reviews__slider-content_link link" href="#">Ubud Bali Resort&amp;SPA</a><a class="reviews__hotel-info-location_country reviews__slider-content_link link" href="#">Bali, Indonesia</a>-->
+<!--                      </div>-->
+<!--                      <div class="reviews__hotel-info-rating">-->
+<!--                        <div class="reviews__hotel-info-rating_score">9,4</div>-->
+<!--                        <div class="reviews__hotel-info-rating_numbers">1324 reviews</div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="reviews__slider-content_user-info reviews__user-info">-->
+<!--                      <svg class="reviews__user-icon">-->
+<!--                        <use href="#account"></use>-->
+<!--                      </svg>-->
+<!--                      <div class="reviews__user-account">-->
+<!--                        <p class="reviews__user-account_name">Hanna Ivanova</p>-->
+<!--                        <p class="reviews__user-account_country">-->
+<!--                          <svg class="reviews__user-account_flag-icon">-->
+<!--                            <use href="#ukraine"></use>-->
+<!--                          </svg>-->
+<!--                          Ukraine-->
+<!--                        </p>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <p class="reviews__slider-content_text">-->
+<!--                      Great location, really pleasant and clean rooms, but the thing-->
+<!--                      that makes this such a good place to stay are the staff. All of-->
+<!--                      the people are incredibly helpful and generous with their time-->
+<!--                      and advice.-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="swiper-slide reviews-swiper-slide">-->
+<!--                <div class="reviews__slider-content slider__content"><a class="reviews__slider-content_link" href="#"><img class="reviews__slider-content_img slider__content_img" alt="King-Kong Hostel, Netherlands, Rotterdam"/></a><span class="reviews__slider-content_price">40 USD</span>-->
+<!--                  <div class="rev1">-->
+<!--                    <div class="reviews__slider-content_hotel-info reviews__hotel-info">-->
+<!--                      <div class="reviews__hotel-info-location"><a class="reviews__hotel-info-location_name reviews__slider-content_link link" href="#">King Kong Hostel</a><a class="reviews__hotel-info-location_country reviews__slider-content_link link" href="#">Rotterdam, Netherlands</a>-->
+<!--                      </div>-->
+<!--                      <div class="reviews__hotel-info-rating">-->
+<!--                        <div class="reviews__hotel-info-rating_score">8,9</div>-->
+<!--                        <div class="reviews__hotel-info-rating_numbers">2016 reviews</div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="reviews__slider-content_user-info reviews__user-info">-->
+<!--                      <svg class="reviews__user-icon">-->
+<!--                        <use href="#account"></use>-->
+<!--                      </svg>-->
+<!--                      <div class="reviews__user-account">-->
+<!--                        <p class="reviews__user-account_name">Adam Smith</p>-->
+<!--                        <p class="reviews__user-account_country">-->
+<!--                          <svg class="reviews__user-account_flag-icon">-->
+<!--                            <use href="#usa"></use>-->
+<!--                          </svg>-->
+<!--                          USA-->
+<!--                        </p>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <p class="reviews__slider-content_text">-->
+<!--                      I&apos;ve been in this hostel for a month and here is the best hostel-->
+<!--                      of all<br/>Excellent management of excellent and ethical staff-->
+
+<!--                      and bedrooms Bathrooms are always clean and excellent<br/>-->
+<!--                      Most importantly, those who work here are kind and good-natured.-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="swiper-slide reviews-swiper-slide">-->
+<!--                <div class="reviews__slider-content slider__content"><a class="reviews__slider-content_link" href="#"><img class="reviews__slider-content_img slider__content_img" alt="Rokoko Hotel, Maroссo, Ourika"/></a><span class="reviews__slider-content_price">100 USD</span>-->
+<!--                  <div class="rev1">-->
+<!--                    <div class="reviews__slider-content_hotel-info reviews__hotel-info">-->
+<!--                      <div class="reviews__hotel-info-location"><a class="reviews__hotel-info-location_name reviews__slider-content_link link" href="#">Rokoko Hotel</a><a class="reviews__hotel-info-location_country reviews__slider-content_link link" href="#">Ourika, Marocco</a>-->
+<!--                      </div>-->
+<!--                      <div class="reviews__hotel-info-rating">-->
+<!--                        <div class="reviews__hotel-info-rating_score">9,1</div>-->
+<!--                        <div class="reviews__hotel-info-rating_numbers">815 reviews</div>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="reviews__slider-content_user-info reviews__user-info">-->
+<!--                      <svg class="reviews__user-icon">-->
+<!--                        <use href="#account"></use>-->
+<!--                      </svg>-->
+<!--                      <div class="reviews__user-account">-->
+<!--                        <p class="reviews__user-account_name">Anika Messer</p>-->
+<!--                        <p class="reviews__user-account_country">-->
+<!--                          <svg class="reviews__user-account_flag-icon">-->
+<!--                            <use href="#germany"></use>-->
+<!--                          </svg>-->
+<!--                          Germany-->
+<!--                        </p>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <p class="reviews__slider-content_text reviews__text">-->
+<!--                      Efficient, friendly, professional, and appropriately attentive.-->
+<!--                      Great hotel in a great location. Easy access to all the-->
+<!--                      surrounding historical sites. Staff is fantastic. Will-->
+<!--                      definitely stay at this location during my next stay in Marocco.-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              -->
+<!--            </div>-->
+<!--            <div class="swiper-pagination reviews__swiper-pagination"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
     </main>
     <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/top-section.js" type="module"></script>
+    <script src="src/scripts/hotels_preferred.js" type="module"></script>
   </body>
 </html>

@@ -8,6 +8,7 @@
 
 /*Header*/
 @import 'sections/header.css';
+@import 'sections/top-section/burger.css';
 
 /*Top-section*/
 @import 'sections/top-section/form.css';

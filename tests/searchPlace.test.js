@@ -1,7 +1,7 @@
 import {
   searchPlace,
   searchPlaceByFilter,
-} from '../src/scripts/searchPlace.js';
+} from '../oldfunctions/searchPlace.js';
 
 test('find all locations by search query', () => {
   const data = [

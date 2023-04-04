@@ -83,6 +83,10 @@
   display: none;
 }
 
+.header__burger {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .header__container {
     height: 7rem;
@@ -98,7 +102,12 @@
     justify-content: flex-end;
   }
 
-  .header__menu-link:nth-child(-n + 2) {
+  .header__menu-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__menu-item:nth-child(-n + 2) {
     display: none;
   }
 

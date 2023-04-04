@@ -45,14 +45,15 @@ button {
 }
 
 input::-webkit-input-placeholder {
+  font-family: Roboto, sans-serif;
   color: var(--text-color);
 }
 
 select {
   font-family: Roboto, sans-serif;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+  /*-webkit-appearance: none;*/
+  /*-moz-appearance: none;*/
+  /*!*appearance: none;*!*/
   text-align: center;
   border: none;
   outline: 0;
