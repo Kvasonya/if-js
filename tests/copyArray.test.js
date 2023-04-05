@@ -1,4 +1,4 @@
-import { copyArray } from '../src/scripts/copyArray.js';
+import { copyArray } from '../oldfunctions/copyArray.js';
 
 test('create a copy of the array', () => {
   const arr = [1, 2, 3];

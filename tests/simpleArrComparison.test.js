@@ -1,4 +1,4 @@
-import { simpleArrComparison } from '../src/scripts/simpleArrComparison.js';
+import { simpleArrComparison } from '../oldfunctions/simpleArrComparison.js';
 
 test('are the 2 arrays the same?', () => {
   const arr1 = [1, 10, 'cat', '101'];

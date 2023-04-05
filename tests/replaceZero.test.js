@@ -1,4 +1,4 @@
-import { renameZero, renameZeroMap } from '../src/scripts/replaceZero.js';
+import { renameZero, renameZeroMap } from '../oldfunctions/replaceZero.js';
 
 test('rename number 0 to word zero', () => {
   const arrayTest = [10, 22, 70, 100, -10, 40, 15, 607];

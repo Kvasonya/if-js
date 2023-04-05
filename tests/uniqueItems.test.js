@@ -4,7 +4,7 @@ import {
   uniqueValuesArr,
   getNewSet,
   arrValuesInSet,
-} from '../src/scripts/uniqueItems.js';
+} from '../oldfunctions/uniqueItems.js';
 
 test('find unique elements in array', () => {
   const data = [

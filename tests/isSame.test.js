@@ -3,7 +3,7 @@ import {
   isSameEl,
   isSameTypeArr,
   isSameElArr,
-} from '../src/scripts/isSame.js';
+} from '../oldfunctions/isSame.js';
 
 test('are all elements of the same type?', () => {
   const nums = [1, 2, 3, 1000];

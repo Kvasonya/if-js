@@ -1,7 +1,7 @@
 import {
   getCitiesInCountries,
   setCitiesInCountries,
-} from '../src/scripts/getCitiesInCountries.js';
+} from '../oldfunctions/getCitiesInCountries.js';
 
 test('create a list of unique countries and cities in those countries', () => {
   const data = [

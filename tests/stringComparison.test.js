@@ -1,4 +1,4 @@
-import { getStringForComparison } from '../src/scripts/stringComparison.js';
+import { getStringForComparison } from '../oldfunctions/stringComparison.js';
 
 test('get string convenient for comparison with another string and get Number toString', () => {
   const ifString = 'I loVe My__funny   Cat!!!';
